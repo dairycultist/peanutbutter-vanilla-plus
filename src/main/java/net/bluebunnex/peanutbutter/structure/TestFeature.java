@@ -1,8 +1,8 @@
-package net.bluebunnex.peanutbutter.src;
+package net.bluebunnex.peanutbutter.structure;
 
+import net.bluebunnex.peanutbutter.Peanutbutter;
 import net.minecraft.block.Block;
 import net.minecraft.block.entity.ChestBlockEntity;
-import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
@@ -25,7 +25,7 @@ public class TestFeature extends Feature {
                 for (int dy = -2; dy <= 0; dy++) {
 
                     if (!world.getMaterial(x + dx, y + dy, z + dz).isSolid())
-                        world.setBlock(x + dx, y + dy, z + dz, Block.COBBLESTONE.id);
+                        world.setBlock(x + dx, y + dy, z + dz, Peanutbutter.STONE_BRICKS.id);
                 }
             }
         }

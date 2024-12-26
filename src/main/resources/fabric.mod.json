@@ -9,7 +9,7 @@
   "icon": "assets/peanutbutter/icon.png",
   "environment": "*",
   "entrypoints": {
-    "stationapi:event_bus": [],
+    "stationapi:event_bus": [ "net.bluebunnex.peanutbutter.Peanutbutter" ],
     "stationapi:event_bus_client": [],
     "stationapi:event_bus_server": []
   },
