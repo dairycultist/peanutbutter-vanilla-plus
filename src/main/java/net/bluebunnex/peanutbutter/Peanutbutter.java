@@ -1,6 +1,6 @@
 package net.bluebunnex.peanutbutter;
 
-import net.bluebunnex.peanutbutter.block.FlowerBlock;
+import net.bluebunnex.peanutbutter.block.PlantTemplateBlock;
 import net.mine_diver.unsafeevents.listener.EventListener;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -29,12 +29,13 @@ public class Peanutbutter {
     @EventListener
     public void registerBlocks(BlockRegistryEvent event) {
 
-        DAHLIA = new FlowerBlock(NAMESPACE.id("dahlia"));
+        DAHLIA = new PlantTemplateBlock(NAMESPACE.id("dahlia"))
+                .setTranslationKey(NAMESPACE, "dahlia");
 
         STONE_BRICKS = new TemplateBlock(NAMESPACE.id("stone_bricks"), Material.STONE)
                 .setHardness(1.5F / 10) // I think this function is bugged, its input is treated like x10
                 .setResistance(10.0F)
                 .setSoundGroup(STONE_SOUND_GROUP)
-                .setTranslationKey("stone_bricks");
+                .setTranslationKey(NAMESPACE, "stone_bricks");
     }
 }

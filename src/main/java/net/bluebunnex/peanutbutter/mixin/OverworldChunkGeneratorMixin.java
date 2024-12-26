@@ -1,9 +1,10 @@
 package net.bluebunnex.peanutbutter.mixin;
 
 import net.bluebunnex.peanutbutter.Peanutbutter;
-import net.bluebunnex.peanutbutter.structure.TestFeature;
+import net.bluebunnex.peanutbutter.structure.PyramidFeature;
 import net.minecraft.block.Block;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkSource;
 import net.minecraft.world.gen.chunk.OverworldChunkGenerator;
 import net.minecraft.world.gen.feature.Feature;
@@ -30,6 +31,8 @@ public class OverworldChunkGeneratorMixin {
 
         final int blockX = x * 16, blockZ = z * 16;
 
+        final Biome biome = this.world.method_1781().getBiome(blockX + 16, blockZ + 16);
+
         int featureX, featureY, featureZ;
 
         // dahlias
@@ -43,14 +46,14 @@ public class OverworldChunkGeneratorMixin {
         }
 
         // test structure
-        if (this.random.nextInt(16) == 0) {
+        if ((biome == Biome.PLAINS || biome == Biome.DESERT) && this.random.nextInt(2) == 0) {
 
             featureX = blockX + this.random.nextInt(16) + 8;
             featureZ = blockZ + this.random.nextInt(16) + 8;
 
             featureY = this.world.getTopY(featureX, featureZ);
 
-            Feature feature = new TestFeature();
+            Feature feature = new PyramidFeature(biome == Biome.PLAINS ? Peanutbutter.STONE_BRICKS.id : Block.SANDSTONE.id);
             feature.prepare(1.0, 1.0, 1.0);
             feature.generate(this.world, this.random, featureX, featureY, featureZ);
         }

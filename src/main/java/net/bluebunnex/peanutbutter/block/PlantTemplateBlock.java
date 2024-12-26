@@ -1,17 +1,15 @@
 package net.bluebunnex.peanutbutter.block;
 
-import net.bluebunnex.peanutbutter.Peanutbutter;
 import net.minecraft.block.PlantBlock;
 import net.modificationstation.stationapi.api.template.block.BlockTemplate;
 import net.modificationstation.stationapi.api.util.Identifier;
 
-public class FlowerBlock extends PlantBlock implements BlockTemplate {
+public class PlantTemplateBlock extends PlantBlock implements BlockTemplate {
 
-    public FlowerBlock(Identifier identifier) {
+    public PlantTemplateBlock(Identifier identifier) {
         super(BlockTemplate.getNextId(), 0);
-        BlockTemplate.onConstructor(this, identifier);
 
-        this.setTranslationKey(Peanutbutter.NAMESPACE, identifier.path);
+        BlockTemplate.onConstructor(this, identifier); // important
 
         this.setSoundGroup(DIRT_SOUND_GROUP);
 
