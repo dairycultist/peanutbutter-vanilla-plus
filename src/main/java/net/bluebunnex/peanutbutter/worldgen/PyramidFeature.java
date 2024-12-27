@@ -1,6 +1,5 @@
-package net.bluebunnex.peanutbutter.structure;
+package net.bluebunnex.peanutbutter.worldgen;
 
-import net.bluebunnex.peanutbutter.Peanutbutter;
 import net.minecraft.block.Block;
 import net.minecraft.block.entity.ChestBlockEntity;
 import net.minecraft.block.entity.MobSpawnerBlockEntity;

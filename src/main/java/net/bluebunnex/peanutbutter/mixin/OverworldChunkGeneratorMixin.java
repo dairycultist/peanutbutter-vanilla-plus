@@ -1,7 +1,7 @@
 package net.bluebunnex.peanutbutter.mixin;
 
 import net.bluebunnex.peanutbutter.Peanutbutter;
-import net.bluebunnex.peanutbutter.structure.PyramidFeature;
+import net.bluebunnex.peanutbutter.worldgen.PyramidFeature;
 import net.minecraft.block.Block;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
@@ -46,7 +46,7 @@ public class OverworldChunkGeneratorMixin {
         }
 
         // test structure
-        if ((biome == Biome.PLAINS || biome == Biome.DESERT) && this.random.nextInt(2) == 0) {
+        if ((biome == Biome.PLAINS || biome == Biome.DESERT) && this.random.nextInt(16) == 0) {
 
             featureX = blockX + this.random.nextInt(16) + 8;
             featureZ = blockZ + this.random.nextInt(16) + 8;

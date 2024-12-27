@@ -20,6 +20,7 @@ public class Peanutbutter {
 
     public static Block DAHLIA;
     public static Block STONE_BRICKS;
+    public static Block HEMATITE_ORE;
 
     @EventListener
     public void registerItems(ItemRegistryEvent event) {
@@ -33,9 +34,15 @@ public class Peanutbutter {
                 .setTranslationKey(NAMESPACE, "dahlia");
 
         STONE_BRICKS = new TemplateBlock(NAMESPACE.id("stone_bricks"), Material.STONE)
-                .setHardness(1.5F / 10) // I think this function is bugged, its input is treated like x10
+                .setHardness(1.5F / 10) // copied from stone, I think this function is bugged, its input is treated like x10
                 .setResistance(10.0F)
                 .setSoundGroup(STONE_SOUND_GROUP)
                 .setTranslationKey(NAMESPACE, "stone_bricks");
+
+        HEMATITE_ORE = new TemplateBlock(NAMESPACE.id("hematite_ore"), Material.STONE)
+                .setHardness(10.0F / 10) // copied from obsidian
+                .setResistance(2000.0F)
+                .setSoundGroup(STONE_SOUND_GROUP)
+                .setTranslationKey(NAMESPACE, "hematite_ore");
     }
 }
