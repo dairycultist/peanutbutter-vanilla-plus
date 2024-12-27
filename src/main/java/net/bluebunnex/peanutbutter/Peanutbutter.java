@@ -1,15 +1,21 @@
 package net.bluebunnex.peanutbutter;
 
 import net.bluebunnex.peanutbutter.block.PlantTemplateBlock;
+import net.bluebunnex.peanutbutter.item.SlimeHammer;
 import net.mine_diver.unsafeevents.listener.EventListener;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.modificationstation.stationapi.api.event.registry.BlockRegistryEvent;
 import net.modificationstation.stationapi.api.event.registry.ItemRegistryEvent;
 import net.modificationstation.stationapi.api.mod.entrypoint.Entrypoint;
 import net.modificationstation.stationapi.api.template.block.TemplateBlock;
+import net.modificationstation.stationapi.api.template.item.TemplateItem;
 import net.modificationstation.stationapi.api.util.Namespace;
 import net.modificationstation.stationapi.api.util.Null;
+
+import java.util.Random;
 
 import static net.minecraft.block.Block.STONE_SOUND_GROUP;
 
@@ -17,6 +23,9 @@ public class Peanutbutter {
 
     @Entrypoint.Namespace
     public static final Namespace NAMESPACE = Null.get();
+
+    public static Item COPPER_INGOT;
+    public static Item SLIME_HAMMER;
 
     public static Block DAHLIA;
     public static Block STONE_BRICKS;
@@ -26,8 +35,14 @@ public class Peanutbutter {
     @EventListener
     public void registerItems(ItemRegistryEvent event) {
 
-        // TODO add copper ingot and smelting recipe
+        SLIME_HAMMER = new SlimeHammer(NAMESPACE.id("slime_hammer"))
+                .setTranslationKey(NAMESPACE, "slime_hammer");
 
+        COPPER_INGOT = new TemplateItem(NAMESPACE.id("copper_ingot"))
+                .setTranslationKey(NAMESPACE, "copper_ingot");
+
+        // TODO add copper smelting recipe
+        // TODO add copper tools with mining level 1
         // TODO remove stone tools recipes
     }
 
@@ -54,5 +69,10 @@ public class Peanutbutter {
                 .setResistance(2000.0f)
                 .setSoundGroup(STONE_SOUND_GROUP)
                 .setTranslationKey(NAMESPACE, "hematite_ore");
+    }
+
+    public static ItemStack getRareLoot(Random random) {
+
+        return new ItemStack(SLIME_HAMMER);
     }
 }

@@ -1,5 +1,6 @@
 package net.bluebunnex.peanutbutter.worldgen;
 
+import net.bluebunnex.peanutbutter.Peanutbutter;
 import net.minecraft.block.Block;
 import net.minecraft.block.entity.ChestBlockEntity;
 import net.minecraft.block.entity.MobSpawnerBlockEntity;
@@ -104,10 +105,10 @@ public class PyramidFeature extends Feature {
         int i = random.nextInt(4);
 
         return switch (i) {
-            case 0 -> new ItemStack(Item.GOLDEN_APPLE);
-            case 1 -> new ItemStack(Item.APPLE);
-            case 2 -> new ItemStack(Item.ARROW, random.nextInt(10) + 5);
-            default -> new ItemStack(Item.IRON_INGOT, random.nextInt(4) + 1);
+            case 0 -> random.nextInt(12) == 0 ? new ItemStack(Item.GOLDEN_APPLE) : new ItemStack(Item.APPLE);
+            case 1 -> new ItemStack(Item.ARROW, random.nextInt(10) + 5);
+            case 2 -> new ItemStack(Item.IRON_INGOT, random.nextInt(4) + 1);
+            default -> Peanutbutter.getRareLoot(random);
         };
     }
 }

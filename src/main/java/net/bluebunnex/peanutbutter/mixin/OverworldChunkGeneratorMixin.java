@@ -37,7 +37,7 @@ public class OverworldChunkGeneratorMixin {
         int featureX, featureY, featureZ;
 
         // copper ore (TODO make iron spawn lower/less)
-        for(int i = 0; i < 12; i++) {
+        for (int i = 0; i < 12; i++) {
 
             featureX = blockX + this.random.nextInt(16);
             featureY = this.random.nextInt(32) + 32;
