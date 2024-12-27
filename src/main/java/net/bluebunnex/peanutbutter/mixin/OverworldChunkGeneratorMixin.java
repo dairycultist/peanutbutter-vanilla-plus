@@ -36,14 +36,14 @@ public class OverworldChunkGeneratorMixin {
 
         int featureX, featureY, featureZ;
 
-        // copper ore (TODO make iron spawn lower/less)
+        // copper ore (generates between [32,64) with veins of 6)
         for (int i = 0; i < 12; i++) {
 
             featureX = blockX + this.random.nextInt(16);
             featureY = this.random.nextInt(32) + 32;
             featureZ = blockZ + this.random.nextInt(16);
 
-            new OreFeature(Peanutbutter.COPPER_ORE.id, 12).generate(this.world, this.random, featureX, featureY, featureZ);
+            new OreFeature(Peanutbutter.COPPER_ORE.id, 6).generate(this.world, this.random, featureX, featureY, featureZ);
         }
 
         // dahlias

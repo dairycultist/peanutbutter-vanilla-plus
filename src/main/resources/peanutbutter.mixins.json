@@ -4,6 +4,7 @@
   "package": "net.bluebunnex.peanutbutter.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "OreFeatureMixin",
     "OverworldChunkGeneratorMixin",
     "PickaxeItemMixin",
     "ToolItemAccessor",
