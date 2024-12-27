@@ -10,7 +10,7 @@
   "environment": "*",
   "entrypoints": {
     "stationapi:event_bus": [ "net.bluebunnex.peanutbutter.Peanutbutter" ],
-    "stationapi:event_bus_client": [],
+    "stationapi:event_bus_client": [ "net.bluebunnex.peanutbutter.PeanutbutterClient" ],
     "stationapi:event_bus_server": []
   },
   "mixins": [
