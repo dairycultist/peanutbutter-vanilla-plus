@@ -8,6 +8,7 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkSource;
 import net.minecraft.world.gen.chunk.OverworldChunkGenerator;
 import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.OreFeature;
 import net.minecraft.world.gen.feature.PlantPatchFeature;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -35,6 +36,16 @@ public class OverworldChunkGeneratorMixin {
 
         int featureX, featureY, featureZ;
 
+        // copper ore (TODO make iron spawn lower/less)
+        for(int i = 0; i < 12; i++) {
+
+            featureX = blockX + this.random.nextInt(16);
+            featureY = this.random.nextInt(32) + 32;
+            featureZ = blockZ + this.random.nextInt(16);
+
+            new OreFeature(Peanutbutter.COPPER_ORE.id, 12).generate(this.world, this.random, featureX, featureY, featureZ);
+        }
+
         // dahlias
         if (this.random.nextInt(2) == 0) {
 
@@ -46,7 +57,7 @@ public class OverworldChunkGeneratorMixin {
         }
 
         // test structure
-        if ((biome == Biome.PLAINS || biome == Biome.DESERT) && this.random.nextInt(16) == 0) {
+        if ((biome == Biome.PLAINS || biome == Biome.DESERT) && this.random.nextInt(64) == 0) {
 
             featureX = blockX + this.random.nextInt(16) + 8;
             featureZ = blockZ + this.random.nextInt(16) + 8;

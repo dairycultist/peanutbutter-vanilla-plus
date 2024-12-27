@@ -20,11 +20,15 @@ public class Peanutbutter {
 
     public static Block DAHLIA;
     public static Block STONE_BRICKS;
+    public static Block COPPER_ORE;
     public static Block HEMATITE_ORE;
 
     @EventListener
     public void registerItems(ItemRegistryEvent event) {
 
+        // TODO add copper ingot and smelting recipe
+
+        // TODO remove stone tools recipes
     }
 
     @EventListener
@@ -34,14 +38,20 @@ public class Peanutbutter {
                 .setTranslationKey(NAMESPACE, "dahlia");
 
         STONE_BRICKS = new TemplateBlock(NAMESPACE.id("stone_bricks"), Material.STONE)
-                .setHardness(1.5F / 10) // copied from stone, I think this function is bugged, its input is treated like x10
-                .setResistance(10.0F)
+                .setHardness(1.5f) // copied from stone
+                .setResistance(10.0f)
                 .setSoundGroup(STONE_SOUND_GROUP)
                 .setTranslationKey(NAMESPACE, "stone_bricks");
 
+        COPPER_ORE = new TemplateBlock(NAMESPACE.id("copper_ore"), Material.STONE)
+                .setHardness(2.0f) // iron is 3.0F
+                .setResistance(10.0f)
+                .setSoundGroup(STONE_SOUND_GROUP)
+                .setTranslationKey(NAMESPACE, "copper_ore");
+
         HEMATITE_ORE = new TemplateBlock(NAMESPACE.id("hematite_ore"), Material.STONE)
-                .setHardness(10.0F / 10) // copied from obsidian
-                .setResistance(2000.0F)
+                .setHardness(10.0f) // copied from obsidian
+                .setResistance(2000.0f)
                 .setSoundGroup(STONE_SOUND_GROUP)
                 .setTranslationKey(NAMESPACE, "hematite_ore");
     }
