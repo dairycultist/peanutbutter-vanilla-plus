@@ -41,7 +41,6 @@ public class Peanutbutter {
         COPPER_INGOT = new TemplateItem(NAMESPACE.id("copper_ingot"))
                 .setTranslationKey(NAMESPACE, "copper_ingot");
 
-        // TODO add copper smelting recipe
         // TODO add copper tools with mining level 1
         // TODO remove stone tools recipes
     }

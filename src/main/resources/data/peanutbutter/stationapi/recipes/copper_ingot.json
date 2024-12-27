@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "peanutbutter:copper_ore"
+  },
+  "result": {
+    "item": "peanutbutter:copper_ingot",
+    "count": 1
+  }
+}
