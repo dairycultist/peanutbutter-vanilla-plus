@@ -40,6 +40,8 @@ public class Peanutbutter {
 
         COPPER_INGOT = new TemplateItem(NAMESPACE.id("copper_ingot"))
                 .setTranslationKey(NAMESPACE, "copper_ingot");
+
+        // TODO either add copper armor or replace chainmail in ArmorRecipes
     }
 
     @EventListener

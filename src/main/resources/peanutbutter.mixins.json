@@ -7,7 +7,8 @@
     "OverworldChunkGeneratorMixin",
     "PickaxeItemMixin",
     "ToolItemAccessor",
-    "ToolRecipesMixin"
+    "ToolRecipesMixin",
+    "WeaponRecipesMixin"
   ],
   "server": [],
   "client": [],
