@@ -16,6 +16,9 @@ import java.util.Random;
 public class OreFeatureMixin {
 
     @Shadow
+    private int oreBlockId;
+
+    @Shadow
     private int oreCount;
 
     @Inject(method = "<init>", at = @At("TAIL"))
@@ -29,7 +32,7 @@ public class OreFeatureMixin {
     public void generate(World world, Random random, int x, int y, int z, CallbackInfoReturnable<Boolean> cir) {
 
         // don't allow iron to generate above or at y=48
-        if (y > 48)
+        if (oreBlockId == Block.IRON_ORE.id && y > 48)
             cir.setReturnValue(false);
     }
 }
