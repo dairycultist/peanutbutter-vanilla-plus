@@ -6,7 +6,8 @@
   "mixins": [
     "OverworldChunkGeneratorMixin",
     "PickaxeItemMixin",
-    "ToolItemAccessor"
+    "ToolItemAccessor",
+    "ToolRecipesMixin"
   ],
   "server": [],
   "client": [],
