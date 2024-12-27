@@ -6,6 +6,7 @@ import net.minecraft.block.entity.ChestBlockEntity;
 import net.minecraft.block.entity.MobSpawnerBlockEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ToolMaterial;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.Feature;
 
@@ -102,13 +103,14 @@ public class PyramidFeature extends Feature {
 
     private ItemStack getRandomChestItem(Random random) {
 
-        int i = random.nextInt(4);
+        int i = random.nextInt(5);
 
         return switch (i) {
             case 0 -> random.nextInt(12) == 0 ? new ItemStack(Item.GOLDEN_APPLE) : new ItemStack(Item.APPLE);
             case 1 -> new ItemStack(Item.ARROW, random.nextInt(10) + 5);
-            case 2 -> new ItemStack(Item.IRON_INGOT, random.nextInt(4) + 1);
-            default -> Peanutbutter.getRareLoot(random);
+            case 2 -> new ItemStack(Peanutbutter.COPPER_INGOT, random.nextInt(3) + 1);
+            case 3 -> new ItemStack(random.nextInt(2) == 0 ? Item.STONE_SWORD : Item.STONE_PICKAXE, 1, random.nextInt(ToolMaterial.STONE.getDurability() / 2, ToolMaterial.STONE.getDurability()));
+            default -> random.nextInt(8) == 0 ? Peanutbutter.getRareLoot(random) : null;
         };
     }
 }

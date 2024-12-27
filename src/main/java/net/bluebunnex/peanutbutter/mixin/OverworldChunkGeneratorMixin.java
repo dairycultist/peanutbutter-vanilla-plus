@@ -56,8 +56,8 @@ public class OverworldChunkGeneratorMixin {
             new PlantPatchFeature(Peanutbutter.DAHLIA.id).generate(this.world, this.random, featureX, featureY, featureZ);
         }
 
-        // test structure
-        if ((biome == Biome.PLAINS || biome == Biome.DESERT) && this.random.nextInt(64) == 0) {
+        // pyramid structure
+        if ((biome == Biome.PLAINS || biome == Biome.DESERT) && this.random.nextInt(256) == 0) {
 
             featureX = blockX + this.random.nextInt(16) + 8;
             featureZ = blockZ + this.random.nextInt(16) + 8;
