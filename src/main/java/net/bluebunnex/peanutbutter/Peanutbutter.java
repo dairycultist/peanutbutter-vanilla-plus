@@ -1,5 +1,6 @@
 package net.bluebunnex.peanutbutter;
 
+import net.bluebunnex.peanutbutter.block.NetherCrownBlock;
 import net.bluebunnex.peanutbutter.block.PlantTemplateBlock;
 import net.bluebunnex.peanutbutter.item.SlimeHammer;
 import net.mine_diver.unsafeevents.listener.EventListener;
@@ -30,11 +31,16 @@ public class Peanutbutter {
     public static Item SLIME_HAMMER;
 
     public static Block DAHLIA;
+    public static Block NETHER_CROWN;
     public static Block STONE_BRICKS;
     public static Block CARVED_BONE;
     public static Block COPPER_ORE;
     public static Block COPPER_BLOCK;
     public static Block HEMATITE_ORE;
+
+//    what if I added a boss called the "Undead Queen," and in order to summon them you need to find
+//    the undead queen's crown in a structure and place it on top of a T of gold, giving a use to gold
+//    and then the boss can drop a rare/useful item
 
     @EventListener
     public void registerItems(ItemRegistryEvent event) {
@@ -56,6 +62,9 @@ public class Peanutbutter {
 
         DAHLIA = new PlantTemplateBlock(NAMESPACE.id("dahlia"))
                 .setTranslationKey(NAMESPACE, "dahlia");
+
+        NETHER_CROWN = new NetherCrownBlock(NAMESPACE.id("nether_crown"))
+                .setTranslationKey(NAMESPACE, "nether_crown");
 
         STONE_BRICKS = new TemplateBlock(NAMESPACE.id("stone_bricks"), Material.STONE)
                 .setHardness(1.5f) // copied from stone
