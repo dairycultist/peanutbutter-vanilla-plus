@@ -1,10 +1,13 @@
 package net.bluebunnex.peanutbutter.mixin;
 
 import net.bluebunnex.peanutbutter.Peanutbutter;
+import net.bluebunnex.peanutbutter.worldgen.PyramidFeature;
 import net.minecraft.block.Block;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkSource;
 import net.minecraft.world.gen.chunk.NetherChunkGenerator;
+import net.minecraft.world.gen.feature.Feature;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -38,8 +41,27 @@ public class NetherChunkGeneratorMixin {
 
             // slight problem: OreFeature only replaces stone, not netherrack
             // also: might make hematite only generate around lava? idk
-            if (world.getBlockId(featureX, featureY, featureZ) == Block.NETHERRACK.id)
-                world.setBlock(featureX, featureY, featureZ, Peanutbutter.HEMATITE_ORE.id);
+            if (this.world.getBlockId(featureX, featureY, featureZ) == Block.NETHERRACK.id)
+                this.world.setBlock(featureX, featureY, featureZ, Peanutbutter.HEMATITE_ORE.id);
+        }
+
+        // pyramid structure
+        if (this.random.nextInt(64) == 0) {
+
+            // start at y=80 (if it's air), go down until the block below isn't air, then spawn
+            featureX = blockX + this.random.nextInt(16) + 8;
+            featureY = 80;
+            featureZ = blockZ + this.random.nextInt(16) + 8;
+
+            if (this.world.getBlockId(featureX, featureY, featureZ) == 0) {
+
+                while (this.world.getBlockId(featureX, featureY - 1, featureZ) == 0)
+                    featureY--;
+
+                Feature feature = new PyramidFeature(Biome.HELL);
+                feature.prepare(1.0, 1.0, 1.0);
+                feature.generate(this.world, this.random, featureX, featureY, featureZ);
+            }
         }
     }
 }

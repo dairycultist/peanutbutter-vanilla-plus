@@ -31,6 +31,7 @@ public class Peanutbutter {
 
     public static Block DAHLIA;
     public static Block STONE_BRICKS;
+    public static Block CARVED_BONE;
     public static Block COPPER_ORE;
     public static Block COPPER_BLOCK;
     public static Block HEMATITE_ORE;
@@ -61,6 +62,14 @@ public class Peanutbutter {
                 .setResistance(10.0f)
                 .setSoundGroup(STONE_SOUND_GROUP)
                 .setTranslationKey(NAMESPACE, "stone_bricks");
+
+        CARVED_BONE = new TemplateBlock(NAMESPACE.id("carved_bone"), Material.STONE)
+                .setHardness(1.5f) // copied from stone
+                .setResistance(10.0f)
+                .setSoundGroup(STONE_SOUND_GROUP)
+                .setTranslationKey(NAMESPACE, "carved_bone");
+
+        // gilded bone? (golden)
 
         COPPER_ORE = new TemplateBlock(NAMESPACE.id("copper_ore"), Material.STONE)
                 .setHardness(2.0f) // iron is 3.0F

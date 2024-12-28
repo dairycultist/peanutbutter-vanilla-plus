@@ -64,7 +64,7 @@ public class OverworldChunkGeneratorMixin {
 
             featureY = this.world.getTopY(featureX, featureZ);
 
-            Feature feature = new PyramidFeature(biome == Biome.PLAINS ? Peanutbutter.STONE_BRICKS.id : Block.SANDSTONE.id);
+            Feature feature = new PyramidFeature(biome);
             feature.prepare(1.0, 1.0, 1.0);
             feature.generate(this.world, this.random, featureX, featureY, featureZ);
         }

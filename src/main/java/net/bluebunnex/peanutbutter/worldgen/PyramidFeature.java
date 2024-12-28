@@ -8,17 +8,32 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.Feature;
 
 import java.util.Random;
 
 public class PyramidFeature extends Feature {
 
+    private final Biome biome;
     private final int baseBlockId;
 
-    public PyramidFeature(int baseBlockId) {
+    public PyramidFeature(Biome biome) {
 
-        this.baseBlockId = baseBlockId;
+        this.biome = biome;
+
+        if (biome == Biome.PLAINS) {
+
+            this.baseBlockId = Peanutbutter.STONE_BRICKS.id;
+
+        } else if (biome == Biome.DESERT) {
+
+            this.baseBlockId = Block.SANDSTONE.id;
+
+        } else { // Biome.hell
+
+            this.baseBlockId = Peanutbutter.CARVED_BONE.id;
+        }
     }
 
     // steal from DungeonFeature
@@ -28,7 +43,11 @@ public class PyramidFeature extends Feature {
 
         int groundBlockId = world.getBlockId(x, y - 1, z);
 
-        if (groundBlockId != Block.GRASS_BLOCK.id && groundBlockId != Block.SAND.id)
+        if (
+                   (this.biome == Biome.PLAINS && groundBlockId != Block.GRASS_BLOCK.id)
+                || (this.biome == Biome.DESERT && groundBlockId != Block.SAND.id)
+                || (this.biome == Biome.HELL   && groundBlockId != Block.NETHERRACK.id)
+            )
             return false;
 
         // floor
@@ -68,6 +87,10 @@ public class PyramidFeature extends Feature {
             }
         }
 
+        // gold cap
+        if (biome == Biome.HELL)
+            world.setBlock(x, y + 9, z, Block.GOLD_BLOCK.id);
+
         ChestBlockEntity chest;
 
         // chests on sides doors aren't
@@ -95,6 +118,7 @@ public class PyramidFeature extends Feature {
             }
         }
 
+        // TODO change loot and spawned mob if this is a nether pyramid
         world.setBlock(x, y, z, Block.SPAWNER.id);
         ((MobSpawnerBlockEntity) world.getBlockEntity(x, y, z)).setSpawnedEntityId("Creeper");
 

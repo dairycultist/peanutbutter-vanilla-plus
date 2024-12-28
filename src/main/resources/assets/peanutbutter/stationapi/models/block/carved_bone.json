@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "side": "peanutbutter:block/carved_bone_side",
+    "end": "peanutbutter:block/carved_bone_end"
+  }
+}
