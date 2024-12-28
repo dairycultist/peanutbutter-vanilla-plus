@@ -78,6 +78,7 @@ public class Peanutbutter {
                 .setHardness(10.0f) // copied from obsidian
                 .setResistance(2000.0f)
                 .setSoundGroup(STONE_SOUND_GROUP)
+                .setLuminance(0.625F) // copied from redstone ore
                 .setTranslationKey(NAMESPACE, "hematite_ore");
     }
 
