@@ -38,10 +38,6 @@ public class Peanutbutter {
     public static Block COPPER_BLOCK;
     public static Block HEMATITE_ORE;
 
-//    what if I added a boss called the "Undead Queen," and in order to summon them you need to find
-//    the undead queen's crown in a structure and place it on top of a T of gold, giving a use to gold
-//    and then the boss can drop a rare/useful item
-
     @EventListener
     public void registerItems(ItemRegistryEvent event) {
 
