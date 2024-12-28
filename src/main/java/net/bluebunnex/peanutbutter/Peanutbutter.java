@@ -17,6 +17,7 @@ import net.modificationstation.stationapi.api.util.Null;
 
 import java.util.Random;
 
+import static net.minecraft.block.Block.METAL_SOUND_GROUP;
 import static net.minecraft.block.Block.STONE_SOUND_GROUP;
 
 public class Peanutbutter {
@@ -25,11 +26,13 @@ public class Peanutbutter {
     public static final Namespace NAMESPACE = Null.get();
 
     public static Item COPPER_INGOT;
+    public static Item HEMATITE_INGOT;
     public static Item SLIME_HAMMER;
 
     public static Block DAHLIA;
     public static Block STONE_BRICKS;
     public static Block COPPER_ORE;
+    public static Block COPPER_BLOCK;
     public static Block HEMATITE_ORE;
 
     @EventListener
@@ -40,6 +43,9 @@ public class Peanutbutter {
 
         COPPER_INGOT = new TemplateItem(NAMESPACE.id("copper_ingot"))
                 .setTranslationKey(NAMESPACE, "copper_ingot");
+
+        HEMATITE_INGOT = new TemplateItem(NAMESPACE.id("hematite_ingot"))
+                .setTranslationKey(NAMESPACE, "hematite_ingot");
 
         // TODO either add copper armor or replace chainmail in ArmorRecipes
     }
@@ -61,6 +67,12 @@ public class Peanutbutter {
                 .setResistance(10.0f)
                 .setSoundGroup(STONE_SOUND_GROUP)
                 .setTranslationKey(NAMESPACE, "copper_ore");
+
+        COPPER_BLOCK = new TemplateBlock(NAMESPACE.id("copper_block"), Material.METAL)
+                .setHardness(5.0F) // copied from iron/gold
+                .setResistance(10.0F)
+                .setSoundGroup(METAL_SOUND_GROUP)
+                .setTranslationKey(NAMESPACE, "copper_block");
 
         HEMATITE_ORE = new TemplateBlock(NAMESPACE.id("hematite_ore"), Material.STONE)
                 .setHardness(10.0f) // copied from obsidian

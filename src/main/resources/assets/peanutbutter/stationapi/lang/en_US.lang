@@ -5,9 +5,11 @@ item.shovelStone.name=Copper Shovel
 item.hoeStone.name=Copper Hoe
 
 item.@.copper_ingot.name=Copper Ingot
+item.@.hematite_ingot.name=Hematite Ingot
 item.@.slime_hammer.name=Slime Hammer
 
 tile.@.dahlia.name=Dahlia
 tile.@.stone_bricks.name=Stone Bricks
 tile.@.copper_ore.name=Copper Ore
+tile.@.copper_block.name=Copper Block
 tile.@.hematite_ore.name=Hematite Ore

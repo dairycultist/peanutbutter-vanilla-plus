@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "peanutbutter:hematite_ore"
+  },
+  "result": {
+    "item": "peanutbutter:hematite_ingot",
+    "count": 1
+  }
+}

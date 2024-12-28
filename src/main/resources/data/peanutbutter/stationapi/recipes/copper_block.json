@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "www",
+    "www",
+    "www"
+  ],
+  "key": {
+    "w": {
+      "item": "peanutbutter:copper_ingot"
+    }
+  },
+  "result": {
+    "item": "peanutbutter:copper_block",
+    "count": 1
+  }
+}
