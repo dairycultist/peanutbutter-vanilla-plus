@@ -124,7 +124,7 @@ public class PyramidFeature extends ConditionalFeature {
     @Override
     public boolean shouldGenerate(Random random, Biome biome) {
 
-        if (biome != Biome.PLAINS && biome != Biome.DESERT)
+        if (biome != Biome.PLAINS && biome != Biome.DESERT && biome != Biome.HELL)
             return false;
 
         return super.shouldGenerate(random, biome);

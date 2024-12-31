@@ -7,7 +7,7 @@ import java.util.Random;
 
 public abstract class ConditionalFeature extends Feature {
 
-    private int rarity;
+    protected int rarity;
 
     public ConditionalFeature(int rarity) {
 
