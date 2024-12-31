@@ -4,22 +4,16 @@ import net.bluebunnex.peanutbutter.Peanutbutter;
 import net.minecraft.block.Block;
 import net.minecraft.block.entity.ChestBlockEntity;
 import net.minecraft.world.World;
-import net.minecraft.world.biome.Biome;
 
 import java.util.Random;
 
 public class ProceduralRuinFeature extends ConditionalFeature {
 
+    // basically a procedurally generated structure (as opposed to more-or-less preset)
+
     public ProceduralRuinFeature(int rarity) {
         super(rarity);
     }
-
-    // basically a procedurally generated structure (as opposed to more-or-less preset)
-
-    // creates a ring of stone/cobblestone with random gaps, then above that does the same except
-    // only placing blocks where there is a block below to support it
-
-    // steal from DungeonFeature
 
     @Override
     public boolean generate(World world, Random random, int x, int y, int z) {
@@ -31,7 +25,8 @@ public class ProceduralRuinFeature extends ConditionalFeature {
         if (groundBlockId != Block.GRASS_BLOCK.id && groundBlockId != Block.SAND.id)
             return false;
 
-        // floor
+        // creates a ring of stone/cobblestone with random gaps, then above that does the same except
+        // only placing blocks where there is a block below to support it
         for (double a = 0; a <= Math.PI; a += 0.1) {
 
             int dx = (int) (Math.cos(a) * radius);
