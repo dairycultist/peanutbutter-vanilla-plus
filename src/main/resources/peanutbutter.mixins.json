@@ -13,7 +13,9 @@
     "WeaponRecipesMixin"
   ],
   "server": [],
-  "client": [],
+  "client": [
+    "ProjectileEntityRendererAccessor"
+  ],
   "injectors": {
     "defaultRequire": 1
   }

@@ -1,12 +1,16 @@
 package net.bluebunnex.peanutbutter;
 
+import net.bluebunnex.peanutbutter.mixin.ProjectileEntityRendererAccessor;
 import net.mine_diver.unsafeevents.listener.EventListener;
+import net.minecraft.client.render.entity.ProjectileEntityRenderer;
 import net.minecraft.item.Item;
 import net.modificationstation.stationapi.api.client.event.texture.TextureRegisterEvent;
 import net.modificationstation.stationapi.api.client.texture.atlas.Atlases;
 import net.modificationstation.stationapi.api.util.Identifier;
 
 public class PeanutbutterClient {
+
+    public static ProjectileEntityRenderer GOLDEN_EGG_RENDERER = new ProjectileEntityRenderer(0);
 
     @EventListener
     public void registerTextures(TextureRegisterEvent event) {
@@ -29,6 +33,10 @@ public class PeanutbutterClient {
 
         Item.STONE_HOE.setTextureId(
                 Atlases.getGuiItems().addTexture(Identifier.of(Peanutbutter.NAMESPACE, "item/copper_hoe")).index
+        );
+
+        ((ProjectileEntityRendererAccessor) GOLDEN_EGG_RENDERER).setItemTextureId(
+                Atlases.getGuiItems().addTexture(Identifier.of(Peanutbutter.NAMESPACE, "item/golden_egg")).index
         );
     }
 }

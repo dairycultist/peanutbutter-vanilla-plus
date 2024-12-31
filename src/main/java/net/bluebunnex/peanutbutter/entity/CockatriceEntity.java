@@ -8,11 +8,7 @@ import net.minecraft.world.World;
 
 public class CockatriceEntity extends ChickenEntity {
 
-    // these will spawn in the Nether
-
-    // need to
-    // 1. create a GoldenEggEntity class extending EggEntity
-    // 2. mixin EggItem to use it
+    // TODO make spawn in the Nether
 
     public CockatriceEntity(World world) {
         super(world);

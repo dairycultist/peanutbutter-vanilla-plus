@@ -3,6 +3,8 @@ package net.bluebunnex.peanutbutter;
 import net.bluebunnex.peanutbutter.block.NetherCrownBlock;
 import net.bluebunnex.peanutbutter.block.PlantTemplateBlock;
 import net.bluebunnex.peanutbutter.entity.CockatriceEntity;
+import net.bluebunnex.peanutbutter.entity.GoldenEggEntity;
+import net.bluebunnex.peanutbutter.item.GoldenEggItem;
 import net.bluebunnex.peanutbutter.item.SlimeHammer;
 import net.mine_diver.unsafeevents.listener.EventListener;
 import net.minecraft.block.Block;
@@ -17,7 +19,6 @@ import net.modificationstation.stationapi.api.event.registry.BlockRegistryEvent;
 import net.modificationstation.stationapi.api.event.registry.ItemRegistryEvent;
 import net.modificationstation.stationapi.api.mod.entrypoint.Entrypoint;
 import net.modificationstation.stationapi.api.template.block.TemplateBlock;
-import net.modificationstation.stationapi.api.template.item.TemplateEggItem;
 import net.modificationstation.stationapi.api.template.item.TemplateItem;
 import net.modificationstation.stationapi.api.util.Namespace;
 import net.modificationstation.stationapi.api.util.Null;
@@ -58,7 +59,7 @@ public class Peanutbutter {
         HEMATITE_INGOT = new TemplateItem(NAMESPACE.id("hematite_ingot"))
                 .setTranslationKey(NAMESPACE, "hematite_ingot");
 
-        GOLDEN_EGG = new TemplateEggItem(NAMESPACE.id("golden_egg"))
+        GOLDEN_EGG = new GoldenEggItem(NAMESPACE.id("golden_egg"))
                 .setTranslationKey(NAMESPACE, "golden_egg");
 
         GOLDEN_FEATHER = new TemplateItem(NAMESPACE.id("golden_feather"))
@@ -114,16 +115,23 @@ public class Peanutbutter {
     public void registerEntities(EntityRegister event) {
 
         event.register(CockatriceEntity.class, "Cockatrice");
+        event.register(GoldenEggEntity.class, "GoldenEgg");
     }
 
     @EventListener
     public void registerEntityRenderer(EntityRendererRegisterEvent event) {
 
         event.renderers.put(CockatriceEntity.class, new ChickenEntityRenderer(new ChickenEntityModel(), 0.3f));
+        event.renderers.put(GoldenEggEntity.class, PeanutbutterClient.GOLDEN_EGG_RENDERER);
     }
 
     public static ItemStack getRareLoot(Random random) {
 
-        return new ItemStack(SLIME_HAMMER);
+        return switch (random.nextInt(2)) {
+
+            case 0 -> new ItemStack(SLIME_HAMMER);
+            case 1 -> new ItemStack(GOLDEN_EGG, random.nextInt(8, 16));
+            default -> null;
+        };
     }
 }
