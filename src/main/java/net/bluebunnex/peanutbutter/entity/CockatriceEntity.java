@@ -17,6 +17,14 @@ public class CockatriceEntity extends ChickenEntity {
     }
 
     @Override
+    protected void tickLiving() {
+
+        // TODO randomly make a glimmer particle
+
+        super.tickLiving();
+    }
+
+    @Override
     public ItemEntity dropItem(int id, int amount) {
 
         if (id == Item.EGG.id)
@@ -33,5 +41,16 @@ public class CockatriceEntity extends ChickenEntity {
     @Override
     public boolean canSpawn() {
         return this.world.canSpawnEntity(this.boundingBox) && this.world.getEntityCollisions(this, this.boundingBox).isEmpty() && !this.world.isBoxSubmergedInFluid(this.boundingBox);
+    }
+
+    @Override
+    protected String getRandomSound() { return "peanutbutter:entity.cockatrice.coo"; }
+
+    protected String getHurtSound() {
+        return "peanutbutter:entity.cockatrice.hurt";
+    }
+
+    protected String getDeathSound() {
+        return "peanutbutter:entity.cockatrice.hurt";
     }
 }

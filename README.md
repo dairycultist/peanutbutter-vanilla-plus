@@ -27,3 +27,7 @@ Get it, 'cuz it's a vanilla+ mod and it's called peanutbutter, which you add to 
 
 <img height="100" src="https://static.wikia.nocookie.net/stardew-valley-minecraft-datapack/images/9/96/Music_disc_concernedapewinternocturneofice.png">
 <img height="100" src="https://static.wikia.nocookie.net/shivaxis-rlcraft/images/c/cc/Iron_Hammer_%28Better_Survival%29.png">
+
+### Sound sources
+https://www.videvo.net/sound-effect/dove-pigeon-coo-pe912203/242526/#rs=audio-download
+https://www.soundsnap.com/wind_chimes_24_wav (audacity -> echo -> reverb -> fade out)
