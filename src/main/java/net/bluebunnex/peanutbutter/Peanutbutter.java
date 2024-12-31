@@ -2,16 +2,22 @@ package net.bluebunnex.peanutbutter;
 
 import net.bluebunnex.peanutbutter.block.NetherCrownBlock;
 import net.bluebunnex.peanutbutter.block.PlantTemplateBlock;
+import net.bluebunnex.peanutbutter.entity.CockatriceEntity;
 import net.bluebunnex.peanutbutter.item.SlimeHammer;
 import net.mine_diver.unsafeevents.listener.EventListener;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.render.entity.ChickenEntityRenderer;
+import net.minecraft.client.render.entity.model.ChickenEntityModel;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.modificationstation.stationapi.api.client.event.render.entity.EntityRendererRegisterEvent;
+import net.modificationstation.stationapi.api.event.entity.EntityRegister;
 import net.modificationstation.stationapi.api.event.registry.BlockRegistryEvent;
 import net.modificationstation.stationapi.api.event.registry.ItemRegistryEvent;
 import net.modificationstation.stationapi.api.mod.entrypoint.Entrypoint;
 import net.modificationstation.stationapi.api.template.block.TemplateBlock;
+import net.modificationstation.stationapi.api.template.item.TemplateEggItem;
 import net.modificationstation.stationapi.api.template.item.TemplateItem;
 import net.modificationstation.stationapi.api.util.Namespace;
 import net.modificationstation.stationapi.api.util.Null;
@@ -29,6 +35,8 @@ public class Peanutbutter {
     public static Item COPPER_INGOT;
     public static Item HEMATITE_INGOT;
     public static Item SLIME_HAMMER;
+    public static Item GOLDEN_EGG;
+    public static Item GOLDEN_FEATHER;
 
     public static Block DAHLIA;
     public static Block NETHER_CROWN;
@@ -49,6 +57,12 @@ public class Peanutbutter {
 
         HEMATITE_INGOT = new TemplateItem(NAMESPACE.id("hematite_ingot"))
                 .setTranslationKey(NAMESPACE, "hematite_ingot");
+
+        GOLDEN_EGG = new TemplateEggItem(NAMESPACE.id("golden_egg"))
+                .setTranslationKey(NAMESPACE, "golden_egg");
+
+        GOLDEN_FEATHER = new TemplateItem(NAMESPACE.id("golden_feather"))
+                .setTranslationKey(NAMESPACE, "golden_feather");
 
         // TODO either add copper armor or replace chainmail in ArmorRecipes
     }
@@ -94,6 +108,18 @@ public class Peanutbutter {
                 .setSoundGroup(STONE_SOUND_GROUP)
                 .setLuminance(0.625F) // copied from redstone ore
                 .setTranslationKey(NAMESPACE, "hematite_ore");
+    }
+
+    @EventListener
+    public void registerEntities(EntityRegister event) {
+
+        event.register(CockatriceEntity.class, "Cockatrice");
+    }
+
+    @EventListener
+    public void registerEntityRenderer(EntityRendererRegisterEvent event) {
+
+        event.renderers.put(CockatriceEntity.class, new ChickenEntityRenderer(new ChickenEntityModel(), 0.3f));
     }
 
     public static ItemStack getRareLoot(Random random) {
