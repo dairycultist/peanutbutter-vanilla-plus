@@ -4,9 +4,6 @@ import net.bluebunnex.peanutbutter.Peanutbutter;
 import net.minecraft.block.Block;
 import net.minecraft.block.entity.ChestBlockEntity;
 import net.minecraft.block.entity.MobSpawnerBlockEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ToolMaterial;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.Feature;
@@ -35,8 +32,6 @@ public class PyramidFeature extends Feature {
             this.baseBlockId = Peanutbutter.CARVED_BONE.id;
         }
     }
-
-    // steal from DungeonFeature
 
     @Override
     public boolean generate(World world, Random random, int x, int y, int z) {
@@ -87,19 +82,20 @@ public class PyramidFeature extends Feature {
             }
         }
 
-        // gold cap
+        // gold cap when in nether
         if (biome == Biome.HELL)
             world.setBlock(x, y + 9, z, Block.GOLD_BLOCK.id);
 
         ChestBlockEntity chest;
 
         // chests on sides doors aren't
+        // (stolen from DungeonFeature)
         world.setBlock(x + 6, y, z, Block.CHEST.id);
         chest = (ChestBlockEntity) world.getBlockEntity(x + 6, y, z);
 
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < 12; i++) {
 
-            chest.setStack(random.nextInt(chest.size()), this.getRandomChestItem(random));
+            chest.setStack(random.nextInt(chest.size()), Peanutbutter.getRandomChestItem(random, this.biome));
         }
 
         world.setBlock(x - 6, y, z, Block.CHEST.id);
@@ -107,7 +103,7 @@ public class PyramidFeature extends Feature {
 
         for (int i = 0; i < 12; i++) {
 
-            chest.setStack(random.nextInt(chest.size()), this.getRandomChestItem(random));
+            chest.setStack(random.nextInt(chest.size()), Peanutbutter.getRandomChestItem(random, this.biome));
         }
 
         // floor center
@@ -118,39 +114,10 @@ public class PyramidFeature extends Feature {
             }
         }
 
-        // TODO change loot and spawned mob if this is a nether pyramid
+        // TODO change spawned mob if this is a nether pyramid (to what idk)
         world.setBlock(x, y, z, Block.SPAWNER.id);
         ((MobSpawnerBlockEntity) world.getBlockEntity(x, y, z)).setSpawnedEntityId("Creeper");
 
         return true;
-    }
-
-    private ItemStack getRandomChestItem(Random random) {
-
-        if (biome == Biome.HELL) {
-
-            int i = random.nextInt(5);
-
-            return switch (i) {
-                case 0 -> new ItemStack(Item.GOLDEN_APPLE);
-                case 1 -> new ItemStack(Item.ARROW, random.nextInt(10) + 5);
-                case 2 -> new ItemStack(Item.IRON_INGOT, random.nextInt(3) + 1);
-                case 3 -> new ItemStack(Item.GOLD_INGOT, random.nextInt(3) + 1);
-                default -> random.nextInt(4) == 0 ? Peanutbutter.getRareLoot(random, biome) : null;
-            };
-
-        } else {
-
-            int i = random.nextInt(5);
-
-            return switch (i) {
-                case 0 -> random.nextInt(12) == 0 ? new ItemStack(Item.GOLDEN_APPLE) : new ItemStack(Item.APPLE);
-                case 1 -> new ItemStack(Item.ARROW, random.nextInt(10) + 5);
-                case 2 -> new ItemStack(Peanutbutter.COPPER_INGOT, random.nextInt(3) + 1);
-                case 3 ->
-                        new ItemStack(random.nextInt(2) == 0 ? Item.STONE_SWORD : Item.STONE_PICKAXE, 1, random.nextInt(ToolMaterial.STONE.getDurability() / 2, ToolMaterial.STONE.getDurability()));
-                default -> random.nextInt(8) == 0 ? Peanutbutter.getRareLoot(random, biome) : null;
-            };
-        }
     }
 }

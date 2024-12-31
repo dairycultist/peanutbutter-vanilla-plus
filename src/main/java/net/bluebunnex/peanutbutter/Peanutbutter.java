@@ -13,6 +13,7 @@ import net.minecraft.client.render.entity.ChickenEntityRenderer;
 import net.minecraft.client.render.entity.model.ChickenEntityModel;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ToolMaterial;
 import net.minecraft.world.biome.Biome;
 import net.modificationstation.stationapi.api.client.event.render.entity.EntityRendererRegisterEvent;
 import net.modificationstation.stationapi.api.event.entity.EntityRegister;
@@ -124,6 +125,37 @@ public class Peanutbutter {
 
         event.renderers.put(CockatriceEntity.class, new ChickenEntityRenderer(new ChickenEntityModel(), 0.3f));
         event.renderers.put(GoldenEggEntity.class, PeanutbutterClient.GOLDEN_EGG_RENDERER);
+    }
+
+
+
+    public static ItemStack getRandomChestItem(Random random, Biome biome) {
+
+        if (biome == Biome.HELL) {
+
+            int i = random.nextInt(5);
+
+            return switch (i) {
+                case 0 -> new ItemStack(Item.GOLDEN_APPLE);
+                case 1 -> new ItemStack(Item.ARROW, random.nextInt(10) + 5);
+                case 2 -> new ItemStack(Item.IRON_INGOT, random.nextInt(3) + 1);
+                case 3 -> new ItemStack(Item.GOLD_INGOT, random.nextInt(3) + 1);
+                default -> random.nextInt(4) == 0 ? Peanutbutter.getRareLoot(random, biome) : null;
+            };
+
+        } else {
+
+            int i = random.nextInt(5);
+
+            return switch (i) {
+                case 0 -> random.nextInt(12) == 0 ? new ItemStack(Item.GOLDEN_APPLE) : new ItemStack(Item.APPLE);
+                case 1 -> new ItemStack(Item.ARROW, random.nextInt(10) + 5);
+                case 2 -> new ItemStack(Peanutbutter.COPPER_INGOT, random.nextInt(3) + 1);
+                case 3 ->
+                        new ItemStack(random.nextInt(2) == 0 ? Item.STONE_SWORD : Item.STONE_PICKAXE, 1, random.nextInt(ToolMaterial.STONE.getDurability() / 2, ToolMaterial.STONE.getDurability()));
+                default -> random.nextInt(8) == 0 ? Peanutbutter.getRareLoot(random, biome) : null;
+            };
+        }
     }
 
     public static ItemStack getRareLoot(Random random, Biome biome) {
