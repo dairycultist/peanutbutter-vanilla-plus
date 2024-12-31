@@ -1,13 +1,13 @@
 package net.bluebunnex.peanutbutter.mixin;
 
 import net.bluebunnex.peanutbutter.Peanutbutter;
+import net.bluebunnex.peanutbutter.worldgen.ConditionalFeature;
+import net.bluebunnex.peanutbutter.worldgen.ProceduralRuinFeature;
 import net.bluebunnex.peanutbutter.worldgen.PyramidFeature;
-import net.minecraft.block.Block;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkSource;
 import net.minecraft.world.gen.chunk.OverworldChunkGenerator;
-import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.OreFeature;
 import net.minecraft.world.gen.feature.PlantPatchFeature;
 import org.spongepowered.asm.mixin.Mixin;
@@ -27,7 +27,7 @@ public class OverworldChunkGeneratorMixin {
     @Shadow
     private World world;
 
-    @Inject(method = "decorate", at = @At("HEAD"))
+    @Inject(method = "decorate", at = @At("TAIL"))
     private void decorateMixin(ChunkSource source, int x, int z, CallbackInfo ci) {
 
         final int blockX = x * 16, blockZ = z * 16;
@@ -56,17 +56,24 @@ public class OverworldChunkGeneratorMixin {
             new PlantPatchFeature(Peanutbutter.DAHLIA.id).generate(this.world, this.random, featureX, featureY, featureZ);
         }
 
-        // pyramid structure
-        if ((biome == Biome.PLAINS || biome == Biome.DESERT) && this.random.nextInt(256) == 0) {
+        // structures
+        ConditionalFeature[] features = {
+                new PyramidFeature(256, biome),
+                new ProceduralRuinFeature(4)
+        };
 
-            featureX = blockX + this.random.nextInt(16) + 8;
-            featureZ = blockZ + this.random.nextInt(16) + 8;
+        for (ConditionalFeature feature : features) {
 
-            featureY = this.world.getTopY(featureX, featureZ);
+            if (feature.shouldGenerate(random, biome)) {
 
-            Feature feature = new PyramidFeature(biome);
-            feature.prepare(1.0, 1.0, 1.0);
-            feature.generate(this.world, this.random, featureX, featureY, featureZ);
+                featureX = blockX + this.random.nextInt(16) + 8;
+                featureZ = blockZ + this.random.nextInt(16) + 8;
+
+                featureY = this.world.getTopY(featureX, featureZ);
+
+                feature.prepare(1.0, 1.0, 1.0);
+                feature.generate(this.world, this.random, featureX, featureY, featureZ);
+            }
         }
     }
 }

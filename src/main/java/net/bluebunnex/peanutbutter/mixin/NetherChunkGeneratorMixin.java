@@ -1,13 +1,13 @@
 package net.bluebunnex.peanutbutter.mixin;
 
 import net.bluebunnex.peanutbutter.Peanutbutter;
+import net.bluebunnex.peanutbutter.worldgen.ConditionalFeature;
 import net.bluebunnex.peanutbutter.worldgen.PyramidFeature;
 import net.minecraft.block.Block;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkSource;
 import net.minecraft.world.gen.chunk.NetherChunkGenerator;
-import net.minecraft.world.gen.feature.Feature;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -25,7 +25,7 @@ public class NetherChunkGeneratorMixin {
     @Shadow
     private World world;
 
-    @Inject(method = "decorate", at = @At("HEAD"))
+    @Inject(method = "decorate", at = @At("TAIL"))
     private void decorateMixin(ChunkSource source, int x, int z, CallbackInfo ci) {
 
         final int blockX = x * 16, blockZ = z * 16;
@@ -45,23 +45,28 @@ public class NetherChunkGeneratorMixin {
                 this.world.setBlock(featureX, featureY, featureZ, Peanutbutter.HEMATITE_ORE.id);
         }
 
-        // pyramid structure
-        if (this.random.nextInt(256) == 0) { // 64~128 may be good once we have more structures
+        // structures
+        ConditionalFeature[] features = {
+                new PyramidFeature(256, Biome.HELL)
+        };
 
-            // start at y=80 (if it's air), go down until the block below isn't air, then spawn
-            featureX = blockX + this.random.nextInt(16) + 8;
-            featureY = 80;
-            featureZ = blockZ + this.random.nextInt(16) + 8;
+        for (ConditionalFeature feature : features) {
 
-            if (this.world.getBlockId(featureX, featureY, featureZ) == 0) {
+            if (feature.shouldGenerate(random, Biome.HELL)) {
 
-                while (this.world.getBlockId(featureX, featureY - 1, featureZ) == 0)
-                    featureY--;
+                // start at y=80 (if it's air), go down until the block below isn't air, then spawn
+                featureX = blockX + this.random.nextInt(16) + 8;
+                featureY = 80;
+                featureZ = blockZ + this.random.nextInt(16) + 8;
 
-                Feature feature = new PyramidFeature(Biome.HELL); // TODO select random feature
+                if (this.world.getBlockId(featureX, featureY, featureZ) == 0) {
 
-                feature.prepare(1.0, 1.0, 1.0);
-                feature.generate(this.world, this.random, featureX, featureY, featureZ);
+                    while (this.world.getBlockId(featureX, featureY - 1, featureZ) == 0)
+                        featureY--;
+
+                    feature.prepare(1.0, 1.0, 1.0);
+                    feature.generate(this.world, this.random, featureX, featureY, featureZ);
+                }
             }
         }
     }

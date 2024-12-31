@@ -6,16 +6,16 @@ import net.minecraft.block.entity.ChestBlockEntity;
 import net.minecraft.block.entity.MobSpawnerBlockEntity;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.gen.feature.Feature;
 
 import java.util.Random;
 
-public class PyramidFeature extends Feature {
+public class PyramidFeature extends ConditionalFeature {
 
     private final Biome biome;
     private final int baseBlockId;
 
-    public PyramidFeature(Biome biome) {
+    public PyramidFeature(int rarity, Biome biome) {
+        super(rarity);
 
         this.biome = biome;
 
@@ -119,5 +119,14 @@ public class PyramidFeature extends Feature {
         ((MobSpawnerBlockEntity) world.getBlockEntity(x, y, z)).setSpawnedEntityId("Creeper");
 
         return true;
+    }
+
+    @Override
+    public boolean shouldGenerate(Random random, Biome biome) {
+
+        if (biome != Biome.PLAINS && biome != Biome.DESERT)
+            return false;
+
+        return super.shouldGenerate(random, biome);
     }
 }
