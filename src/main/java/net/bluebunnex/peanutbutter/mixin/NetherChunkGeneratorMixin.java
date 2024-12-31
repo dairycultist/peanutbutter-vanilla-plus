@@ -46,7 +46,7 @@ public class NetherChunkGeneratorMixin {
         }
 
         // pyramid structure
-        if (this.random.nextInt(64) == 0) {
+        if (this.random.nextInt(256) == 0) { // 64~128 may be good once we have more structures
 
             // start at y=80 (if it's air), go down until the block below isn't air, then spawn
             featureX = blockX + this.random.nextInt(16) + 8;
@@ -58,7 +58,8 @@ public class NetherChunkGeneratorMixin {
                 while (this.world.getBlockId(featureX, featureY - 1, featureZ) == 0)
                     featureY--;
 
-                Feature feature = new PyramidFeature(Biome.HELL);
+                Feature feature = new PyramidFeature(Biome.HELL); // TODO select random feature
+
                 feature.prepare(1.0, 1.0, 1.0);
                 feature.generate(this.world, this.random, featureX, featureY, featureZ);
             }

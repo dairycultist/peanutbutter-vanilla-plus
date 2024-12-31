@@ -105,7 +105,7 @@ public class PyramidFeature extends Feature {
         world.setBlock(x - 6, y, z, Block.CHEST.id);
         chest = (ChestBlockEntity) world.getBlockEntity(x - 6, y, z);
 
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < 12; i++) {
 
             chest.setStack(random.nextInt(chest.size()), this.getRandomChestItem(random));
         }
@@ -127,14 +127,30 @@ public class PyramidFeature extends Feature {
 
     private ItemStack getRandomChestItem(Random random) {
 
-        int i = random.nextInt(5);
+        if (biome == Biome.HELL) {
 
-        return switch (i) {
-            case 0 -> random.nextInt(12) == 0 ? new ItemStack(Item.GOLDEN_APPLE) : new ItemStack(Item.APPLE);
-            case 1 -> new ItemStack(Item.ARROW, random.nextInt(10) + 5);
-            case 2 -> new ItemStack(Peanutbutter.COPPER_INGOT, random.nextInt(3) + 1);
-            case 3 -> new ItemStack(random.nextInt(2) == 0 ? Item.STONE_SWORD : Item.STONE_PICKAXE, 1, random.nextInt(ToolMaterial.STONE.getDurability() / 2, ToolMaterial.STONE.getDurability()));
-            default -> random.nextInt(8) == 0 ? Peanutbutter.getRareLoot(random) : null;
-        };
+            int i = random.nextInt(5);
+
+            return switch (i) {
+                case 0 -> new ItemStack(Item.GOLDEN_APPLE);
+                case 1 -> new ItemStack(Item.ARROW, random.nextInt(10) + 5);
+                case 2 -> new ItemStack(Item.IRON_INGOT, random.nextInt(3) + 1);
+                case 3 -> new ItemStack(Item.GOLD_INGOT, random.nextInt(3) + 1);
+                default -> random.nextInt(4) == 0 ? Peanutbutter.getRareLoot(random, biome) : null;
+            };
+
+        } else {
+
+            int i = random.nextInt(5);
+
+            return switch (i) {
+                case 0 -> random.nextInt(12) == 0 ? new ItemStack(Item.GOLDEN_APPLE) : new ItemStack(Item.APPLE);
+                case 1 -> new ItemStack(Item.ARROW, random.nextInt(10) + 5);
+                case 2 -> new ItemStack(Peanutbutter.COPPER_INGOT, random.nextInt(3) + 1);
+                case 3 ->
+                        new ItemStack(random.nextInt(2) == 0 ? Item.STONE_SWORD : Item.STONE_PICKAXE, 1, random.nextInt(ToolMaterial.STONE.getDurability() / 2, ToolMaterial.STONE.getDurability()));
+                default -> random.nextInt(8) == 0 ? Peanutbutter.getRareLoot(random, biome) : null;
+            };
+        }
     }
 }

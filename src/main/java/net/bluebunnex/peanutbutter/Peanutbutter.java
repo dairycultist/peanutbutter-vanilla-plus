@@ -13,6 +13,7 @@ import net.minecraft.client.render.entity.ChickenEntityRenderer;
 import net.minecraft.client.render.entity.model.ChickenEntityModel;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.world.biome.Biome;
 import net.modificationstation.stationapi.api.client.event.render.entity.EntityRendererRegisterEvent;
 import net.modificationstation.stationapi.api.event.entity.EntityRegister;
 import net.modificationstation.stationapi.api.event.registry.BlockRegistryEvent;
@@ -125,9 +126,17 @@ public class Peanutbutter {
         event.renderers.put(GoldenEggEntity.class, PeanutbutterClient.GOLDEN_EGG_RENDERER);
     }
 
-    public static ItemStack getRareLoot(Random random) {
+    public static ItemStack getRareLoot(Random random, Biome biome) {
 
-        return switch (random.nextInt(2)) {
+        int value;
+
+        if (biome == Biome.HELL) {
+            value = random.nextInt(2); // more loot possible if in nether to signify progression :D
+        } else {
+            value = 0;
+        }
+
+        return switch (value) {
 
             case 0 -> new ItemStack(SLIME_HAMMER);
             case 1 -> new ItemStack(GOLDEN_EGG, random.nextInt(8, 16));
