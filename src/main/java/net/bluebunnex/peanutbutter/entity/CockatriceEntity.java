@@ -19,7 +19,19 @@ public class CockatriceEntity extends ChickenEntity {
     @Override
     protected void tickLiving() {
 
-        // TODO randomly make a glimmer particle
+        // glimmer particle would maybe work better, but idk how to add custom particles
+        if (this.random.nextInt(8) == 0) {
+
+            world.addParticle(
+                    "flame",
+                    this.x + this.random.nextDouble(-0.5, 0.5),
+                    this.y + 0.5,
+                    this.z + this.random.nextDouble(-0.5, 0.5),
+                    0.0,
+                    0.05,
+                    0.0
+            );
+        }
 
         super.tickLiving();
     }
