@@ -1,3 +1,6 @@
 {
-  "parent": "peanutbutter:block/nether_crown"
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "peanutbutter:item/nether_crown"
+  }
 }

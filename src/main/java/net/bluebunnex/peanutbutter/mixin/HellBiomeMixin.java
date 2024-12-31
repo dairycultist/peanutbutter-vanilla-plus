@@ -11,6 +11,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(HellBiome.class)
 public class HellBiomeMixin {
 
+    @SuppressWarnings("unchecked")
     @Inject(method = "<init>", at = @At("TAIL"))
     public void cat(CallbackInfo ci) {
 

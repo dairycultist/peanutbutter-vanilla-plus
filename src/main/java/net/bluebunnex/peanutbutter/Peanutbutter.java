@@ -76,6 +76,8 @@ public class Peanutbutter {
         DAHLIA = new PlantTemplateBlock(NAMESPACE.id("dahlia"))
                 .setTranslationKey(NAMESPACE, "dahlia");
 
+        // TODO fix bounding box
+        // TODO make this bish wearable
         NETHER_CROWN = new NetherCrownBlock(NAMESPACE.id("nether_crown"))
                 .setTranslationKey(NAMESPACE, "nether_crown");
 
