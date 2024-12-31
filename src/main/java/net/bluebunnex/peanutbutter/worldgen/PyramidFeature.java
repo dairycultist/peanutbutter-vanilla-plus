@@ -86,10 +86,10 @@ public class PyramidFeature extends ConditionalFeature {
         if (biome == Biome.HELL)
             world.setBlock(x, y + 9, z, Block.GOLD_BLOCK.id);
 
-        ChestBlockEntity chest;
-
         // chests on sides doors aren't
         // (stolen from DungeonFeature)
+        ChestBlockEntity chest;
+
         world.setBlock(x + 6, y, z, Block.CHEST.id);
         chest = (ChestBlockEntity) world.getBlockEntity(x + 6, y, z);
 

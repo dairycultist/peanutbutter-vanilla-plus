@@ -2,7 +2,9 @@ package net.bluebunnex.peanutbutter.worldgen;
 
 import net.bluebunnex.peanutbutter.Peanutbutter;
 import net.minecraft.block.Block;
+import net.minecraft.block.entity.ChestBlockEntity;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 
 import java.util.Random;
 
@@ -17,8 +19,6 @@ public class ProceduralRuinFeature extends ConditionalFeature {
     // creates a ring of stone/cobblestone with random gaps, then above that does the same except
     // only placing blocks where there is a block below to support it
 
-    // also the floor is brick + dirt
-
     // steal from DungeonFeature
 
     @Override
@@ -32,33 +32,47 @@ public class ProceduralRuinFeature extends ConditionalFeature {
             return false;
 
         // floor
-        for (double r = 0; r <= radius; r += 0.1) {
-            for (double a = 0; a <= Math.PI; a += 0.1) {
-                for (int dy = -8; dy < 5; dy++) {
+        for (double a = 0; a <= Math.PI; a += 0.1) {
 
-                    int dx = (int) (Math.cos(a) * r);
-                    int dz = (int) (Math.sin(a) * r);
+            int dx = (int) (Math.cos(a) * radius);
+            int dz = (int) (Math.sin(a) * radius);
 
-                    if (dy == -1) {
+            for (int dy = -8; dy < 3; dy++) {
 
-                        world.setBlock(x + dx, y + dy, z + dz, Peanutbutter.STONE_BRICKS.id);
-                        world.setBlock(x - dx, y + dy, z - dz, Peanutbutter.STONE_BRICKS.id);
+                int blockID = random.nextInt(10) > 3 ? Peanutbutter.STONE_BRICKS.id
+                            : random.nextInt(2) == 0 ? Block.COBBLESTONE.id : Block.STONE.id;
 
-                    } else if (dy > -1) {
+                if (dy == -1) {
 
-                        world.setBlock(x + dx, y + dy, z + dz, 0);
-                        world.setBlock(x - dx, y + dy, z - dz, 0);
+                    world.setBlock(x + dx, y + dy, z + dz, blockID);
+                    world.setBlock(x - dx, y + dy, z - dz, blockID);
 
-                    } else {
+                } else if (dy > -1) {
 
-                        if (!world.getMaterial(x + dx, y + dy, z + dz).isSolid())
-                            world.setBlock(x + dx, y + dy, z + dz, Peanutbutter.STONE_BRICKS.id);
+                    if (world.getMaterial(x + dx, y + dy - 1, z + dz).isSolid() && random.nextInt(10) > 2 + dy)
+                        world.setBlock(x + dx, y + dy, z + dz, blockID);
 
-                        if (!world.getMaterial(x - dx, y + dy, z - dz).isSolid())
-                            world.setBlock(x - dx, y + dy, z - dz, Peanutbutter.STONE_BRICKS.id);
-                    }
+                    if (world.getMaterial(x - dx, y + dy - 1, z - dz).isSolid() && random.nextInt(10) > 2 + dy)
+                        world.setBlock(x - dx, y + dy, z - dz, blockID);
+
+                } else {
+
+                    if (!world.getMaterial(x + dx, y + dy, z + dz).isSolid())
+                        world.setBlock(x + dx, y + dy, z + dz, blockID);
+
+                    if (!world.getMaterial(x - dx, y + dy, z - dz).isSolid())
+                        world.setBlock(x - dx, y + dy, z - dz, blockID);
                 }
             }
+        }
+
+        // chest
+        world.setBlock(x, y, z, Block.CHEST.id);
+        ChestBlockEntity chest = (ChestBlockEntity) world.getBlockEntity(x, y, z);
+
+        for (int i = 0; i < 6; i++) {
+
+            chest.setStack(random.nextInt(chest.size()), Peanutbutter.getRandomChestItem(random, null));
         }
 
         return true;

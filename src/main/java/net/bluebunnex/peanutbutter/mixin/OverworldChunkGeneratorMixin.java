@@ -59,7 +59,7 @@ public class OverworldChunkGeneratorMixin {
         // structures
         ConditionalFeature[] features = {
                 new PyramidFeature(256, biome),
-                new ProceduralRuinFeature(4)
+                new ProceduralRuinFeature(128)
         };
 
         for (ConditionalFeature feature : features) {
