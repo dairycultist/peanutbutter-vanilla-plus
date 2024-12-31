@@ -8,12 +8,12 @@ import net.minecraft.world.World;
 
 public class CockatriceEntity extends ChickenEntity {
 
-    // TODO make spawn in the Nether
-
     public CockatriceEntity(World world) {
         super(world);
 
         this.texture = "/assets/peanutbutter/stationapi/textures/entity/cockatrice.png";
+
+        this.fireImmune = true;
     }
 
     @Override
@@ -28,5 +28,10 @@ public class CockatriceEntity extends ChickenEntity {
     @Override
     protected int getDroppedItemId() {
         return Peanutbutter.GOLDEN_FEATHER.id;
+    }
+
+    @Override
+    public boolean canSpawn() {
+        return this.world.canSpawnEntity(this.boundingBox) && this.world.getEntityCollisions(this, this.boundingBox).isEmpty() && !this.world.isBoxSubmergedInFluid(this.boundingBox);
     }
 }
