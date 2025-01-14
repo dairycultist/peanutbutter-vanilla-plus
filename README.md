@@ -2,21 +2,35 @@
 
 Get it, 'cuz it's a vanilla+ mod and it's called peanutbutter, which you add to vanilla icecream? I thought it was witty.
 
-> [!IMPORTANT]
-> This mod **will** be made by doing runs in survival and deducing from that what would be fun to add.
-
-### Literally all my ideas (good or bad)
-- new music disc(s)
-- new crops
-- hematite
+## Implemented
+- Copper
+  - Replaces stone
+  - Iron spawns lower (no longer at the surface)
+  - Slows down early game progression
+- Hematite
   - red ingot
   - found in the nether
   - better than diamond
-- new structures
+- New decoration blocks
+  - Stone bricks
+  - Carved bone
+  - Copper block
+- New structures
+  - Overworld
+    - Pyramids (plains and desert)
+    - Ruins (procedural!)
+  - Nether
+    - Pyramid
+- New mobs
+  - Cockatrice
+  - Swamp Monster
+
+### Planned? (Literally all my ideas good or bad)
+- new music disc(s)
+- new crops
 - new enemies
   - stone golem
   - goblin
-- new decoration blocks
 - uncraftable weapons and armor
   - found in structures
   - throwable dynamite
@@ -27,7 +41,7 @@ Get it, 'cuz it's a vanilla+ mod and it's called peanutbutter, which you add to 
 - "ghast nursery" structure that spawns baby ghasts
 - overworld structure (underground, like strongholds) made of blocks (called "???") that require hematite to be able to break into, so there's no way to go into them until after you reach the nether
 - add new achievements
-  - "Doom the nether" / beat the nether queen
+  - "Doom the nether" / defeat the nether queen
   - "This is my jam" / collect all the music discs
 
 <img height="100" src="https://static.wikia.nocookie.net/stardew-valley-minecraft-datapack/images/9/96/Music_disc_concernedapewinternocturneofice.png">

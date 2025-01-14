@@ -4,12 +4,15 @@ import net.bluebunnex.peanutbutter.block.NetherCrownBlock;
 import net.bluebunnex.peanutbutter.block.PlantTemplateBlock;
 import net.bluebunnex.peanutbutter.entity.CockatriceEntity;
 import net.bluebunnex.peanutbutter.entity.GoldenEggEntity;
+import net.bluebunnex.peanutbutter.entity.SwampMonsterEntity;
 import net.bluebunnex.peanutbutter.item.GoldenEggItem;
 import net.bluebunnex.peanutbutter.item.SlimeHammer;
 import net.mine_diver.unsafeevents.listener.EventListener;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.render.entity.ChickenEntityRenderer;
+import net.minecraft.client.render.entity.LivingEntityRenderer;
+import net.minecraft.client.render.entity.model.BipedEntityModel;
 import net.minecraft.client.render.entity.model.ChickenEntityModel;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -120,6 +123,8 @@ public class Peanutbutter {
 
         event.register(CockatriceEntity.class, "Cockatrice");
         event.register(GoldenEggEntity.class, "GoldenEgg");
+
+        event.register(SwampMonsterEntity.class, "SwampMonster");
     }
 
     @EventListener
@@ -127,6 +132,8 @@ public class Peanutbutter {
 
         event.renderers.put(CockatriceEntity.class, new ChickenEntityRenderer(new ChickenEntityModel(), 0.3f));
         event.renderers.put(GoldenEggEntity.class, PeanutbutterClient.GOLDEN_EGG_RENDERER);
+
+        event.renderers.put(SwampMonsterEntity.class, new LivingEntityRenderer(new BipedEntityModel(), 0.5f));
     }
 
 
