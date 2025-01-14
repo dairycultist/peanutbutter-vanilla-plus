@@ -6,16 +6,22 @@ import net.minecraft.world.World;
 
 public class SwampMonsterEntity extends MonsterEntity {
 
-    // TODO spawn in swamps
     // TODO have warden-like ears
-    // TODO much stronger than a zombie, mid-game enemy
     // TODO custom sounds, basically zombie sounds with gurgling?
+
+    // maybe override canSpawn() to make it spawn in daylight...?
 
     public SwampMonsterEntity(World world) {
         super(world);
 
         // https://www.minecraftskins.com/skin/22880727/swampy-creature/
         this.texture = "/assets/peanutbutter/stationapi/textures/entity/swamp_monster.png";
+        
+        // much stronger than a zombie, mid-game enemy
+        this.attackDamage = 6;
+
+        this.maxHealth = 40;
+        this.health    = 40;
     }
 
     protected String getRandomSound() {

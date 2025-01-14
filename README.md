@@ -27,6 +27,11 @@ Get it, 'cuz it's a vanilla+ mod and it's called peanutbutter, which you add to 
 
 ### Planned? (Literally all my ideas good or bad)
 - new music disc(s)
+- baubles
+  - bauble shards, which you need 9 of to craft a bauble
+  - bauble slots (like 4 or something?)
+  - Chest bauble (increases your inventory space by 9)
+  - Jump bauble (gives you an extra air jump)
 - new crops
 - new enemies
   - stone golem

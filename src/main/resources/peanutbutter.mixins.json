@@ -10,6 +10,7 @@
     "OreFeatureMixin",
     "OverworldChunkGeneratorMixin",
     "PickaxeItemMixin",
+    "SwamplandBiomeMixin",
     "ToolItemAccessor",
     "ToolRecipesMixin",
     "WeaponRecipesMixin"

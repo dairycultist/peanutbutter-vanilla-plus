@@ -11,4 +11,7 @@ public interface BiomeAccessor {
 
     @Accessor
     List getSpawnablePassive();
+
+    @Accessor
+    List getSpawnableMonsters();
 }
