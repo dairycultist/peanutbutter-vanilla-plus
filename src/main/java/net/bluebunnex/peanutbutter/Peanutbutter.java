@@ -2,6 +2,7 @@ package net.bluebunnex.peanutbutter;
 
 import net.bluebunnex.peanutbutter.block.NetherCrownBlock;
 import net.bluebunnex.peanutbutter.block.PlantTemplateBlock;
+import net.bluebunnex.peanutbutter.block.TomatoCropBlock;
 import net.bluebunnex.peanutbutter.entity.CockatriceEntity;
 import net.bluebunnex.peanutbutter.entity.GoldenEggEntity;
 import net.bluebunnex.peanutbutter.entity.SwampMonsterEntity;
@@ -24,7 +25,9 @@ import net.modificationstation.stationapi.api.event.registry.BlockRegistryEvent;
 import net.modificationstation.stationapi.api.event.registry.ItemRegistryEvent;
 import net.modificationstation.stationapi.api.mod.entrypoint.Entrypoint;
 import net.modificationstation.stationapi.api.template.block.TemplateBlock;
+import net.modificationstation.stationapi.api.template.item.TemplateFoodItem;
 import net.modificationstation.stationapi.api.template.item.TemplateItem;
+import net.modificationstation.stationapi.api.template.item.TemplateMushroomStewItem;
 import net.modificationstation.stationapi.api.util.Namespace;
 import net.modificationstation.stationapi.api.util.Null;
 
@@ -43,7 +46,10 @@ public class Peanutbutter {
     public static Item SLIME_HAMMER;
     public static Item GOLDEN_EGG;
     public static Item GOLDEN_FEATHER;
+    public static Item TOMATO;
+    public static Item CURRY;
 
+    public static Block TOMATO_CROP;
     public static Block DAHLIA;
     public static Block NETHER_CROWN;
     public static Block STONE_BRICKS;
@@ -70,11 +76,21 @@ public class Peanutbutter {
         GOLDEN_FEATHER = new TemplateItem(NAMESPACE.id("golden_feather"))
                 .setTranslationKey(NAMESPACE, "golden_feather");
 
+        TOMATO = new TemplateFoodItem(NAMESPACE.id("tomato"), 2, false)
+                .setMaxCount(8)
+                .setTranslationKey(NAMESPACE, "tomato");
+
+        CURRY = new TemplateMushroomStewItem(NAMESPACE.id("curry"), 10)
+                .setTranslationKey(NAMESPACE, "curry");
+
         // TODO either add copper armor or replace chainmail in ArmorRecipes
     }
 
     @EventListener
     public void registerBlocks(BlockRegistryEvent event) {
+
+        TOMATO_CROP = new TomatoCropBlock(NAMESPACE.id("tomato_crop"))
+                .setTranslationKey(NAMESPACE, "tomato_crop");
 
         DAHLIA = new PlantTemplateBlock(NAMESPACE.id("dahlia"))
                 .setTranslationKey(NAMESPACE, "dahlia");

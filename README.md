@@ -7,10 +7,12 @@ Get it, 'cuz it's a vanilla+ mod and it's called peanutbutter, which you add to 
   - Replaces stone
   - Iron spawns lower (no longer at the surface)
   - Slows down early game progression
+    - I didn't like how in the first 5 minutes of the game, you could immediately jump right from wood to stone to iron
+      tools without even going underground.
 - Hematite
   - red ingot
   - found in the nether
-  - better than diamond
+  - sidegrade (not upgrade) from diamond, better for combat since nether is combat-focused
 - New decoration blocks
   - Stone bricks
   - Carved bone
@@ -27,12 +29,15 @@ Get it, 'cuz it's a vanilla+ mod and it's called peanutbutter, which you add to 
 
 ### Planned? (Literally all my ideas good or bad)
 - new music disc(s)
+- maracas
 - baubles
   - bauble shards, which you need 9 of to craft a bauble
   - bauble slots (like 4 or something?)
   - Chest bauble (increases your inventory space by 9)
   - Jump bauble (gives you an extra air jump)
-- new crops
+- new crops/food
+  - tomato
+  - curry
 - new enemies
   - stone golem
   - goblin
