@@ -60,38 +60,7 @@ public class Peanutbutter {
     public static Block COPPER_BLOCK;
     public static Block HEMATITE_ORE;
 
-    @EventListener
-    public void registerItems(ItemRegistryEvent event) {
-
-        SLIME_HAMMER = new SlimeHammer(NAMESPACE.id("slime_hammer"))
-                .setTranslationKey(NAMESPACE, "slime_hammer");
-
-        COPPER_INGOT = new TemplateItem(NAMESPACE.id("copper_ingot"))
-                .setTranslationKey(NAMESPACE, "copper_ingot");
-
-        HEMATITE_INGOT = new TemplateItem(NAMESPACE.id("hematite_ingot"))
-                .setTranslationKey(NAMESPACE, "hematite_ingot");
-
-        GOLDEN_EGG = new GoldenEggItem(NAMESPACE.id("golden_egg"))
-                .setTranslationKey(NAMESPACE, "golden_egg");
-
-        GOLDEN_FEATHER = new TemplateItem(NAMESPACE.id("golden_feather"))
-                .setTranslationKey(NAMESPACE, "golden_feather");
-
-        TOMATO = new TemplateFoodItem(NAMESPACE.id("tomato"), 2, false)
-                .setMaxCount(8)
-                .setTranslationKey(NAMESPACE, "tomato");
-
-        TOMATO_SEEDS = new TemplateSeedsItem(NAMESPACE.id("tomato_seeds"), TOMATO_CROP.id)
-                .setTranslationKey(NAMESPACE, "tomato_seeds");
-
-        ((CustomCropBlock) TOMATO_CROP).setProductAndSeed(TOMATO, TOMATO_SEEDS);
-
-        CURRY = new TemplateMushroomStewItem(NAMESPACE.id("curry"), 10)
-                .setTranslationKey(NAMESPACE, "curry");
-
-        // TODO either add copper armor or replace chainmail in ArmorRecipes
-    }
+    // note that blocks are registered before items
 
     @EventListener
     public void registerBlocks(BlockRegistryEvent event) {
@@ -139,6 +108,39 @@ public class Peanutbutter {
                 .setSoundGroup(STONE_SOUND_GROUP)
                 .setLuminance(0.625F) // copied from redstone ore
                 .setTranslationKey(NAMESPACE, "hematite_ore");
+    }
+
+    @EventListener
+    public void registerItems(ItemRegistryEvent event) {
+
+        SLIME_HAMMER = new SlimeHammer(NAMESPACE.id("slime_hammer"))
+                .setTranslationKey(NAMESPACE, "slime_hammer");
+
+        COPPER_INGOT = new TemplateItem(NAMESPACE.id("copper_ingot"))
+                .setTranslationKey(NAMESPACE, "copper_ingot");
+
+        HEMATITE_INGOT = new TemplateItem(NAMESPACE.id("hematite_ingot"))
+                .setTranslationKey(NAMESPACE, "hematite_ingot");
+
+        GOLDEN_EGG = new GoldenEggItem(NAMESPACE.id("golden_egg"))
+                .setTranslationKey(NAMESPACE, "golden_egg");
+
+        GOLDEN_FEATHER = new TemplateItem(NAMESPACE.id("golden_feather"))
+                .setTranslationKey(NAMESPACE, "golden_feather");
+
+        TOMATO = new TemplateFoodItem(NAMESPACE.id("tomato"), 2, false)
+                .setMaxCount(8)
+                .setTranslationKey(NAMESPACE, "tomato");
+
+        TOMATO_SEEDS = new TemplateSeedsItem(NAMESPACE.id("tomato_seeds"), TOMATO_CROP.id)
+                .setTranslationKey(NAMESPACE, "tomato_seeds");
+
+        ((CustomCropBlock) TOMATO_CROP).setProductAndSeed(TOMATO, TOMATO_SEEDS);
+
+        CURRY = new TemplateMushroomStewItem(NAMESPACE.id("curry"), 10)
+                .setTranslationKey(NAMESPACE, "curry");
+
+        // TODO either add copper armor or replace chainmail in ArmorRecipes
     }
 
     @EventListener
