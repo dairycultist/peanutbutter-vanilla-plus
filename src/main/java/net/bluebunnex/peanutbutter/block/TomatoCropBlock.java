@@ -1,7 +1,10 @@
 package net.bluebunnex.peanutbutter.block;
 
 import net.bluebunnex.peanutbutter.Peanutbutter;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.block.Block;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.modificationstation.stationapi.api.block.BlockState;
@@ -10,9 +13,6 @@ import net.modificationstation.stationapi.api.util.Identifier;
 
 public class TomatoCropBlock extends TemplateCropBlock {
 
-    // TODO gonna have to override getTexture
-    // and bind our own textures the same way we did in Peanutbutter for copper tools
-
     public TomatoCropBlock(Identifier identifier) {
         super(identifier, 88);
 
@@ -20,9 +20,15 @@ public class TomatoCropBlock extends TemplateCropBlock {
     }
 
     @Override
+    @Environment(EnvType.CLIENT)
+    public int getRenderType() {
+        return 1;
+    }
+
+    @Override
     public void dropStacks(World world, int x, int y, int z, int meta, float luck) {
 
-        if (!world.isRemote) {
+        if (!world.isRemote && meta == 7) {
 
             int count = world.random.nextInt(2, 5);
 

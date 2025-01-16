@@ -38,5 +38,9 @@ public class PeanutbutterClient {
         ((ProjectileEntityRendererAccessor) GOLDEN_EGG_RENDERER).setItemTextureId(
                 Atlases.getGuiItems().addTexture(Identifier.of(Peanutbutter.NAMESPACE, "item/golden_egg")).index
         );
+
+        Peanutbutter.TOMATO_CROP.textureId = Atlases.getTerrain().addTexture(Identifier.of(Peanutbutter.NAMESPACE, "block/tomato_crop0")).index;
+        for (int i=1; i<8; i++)
+            Atlases.getTerrain().addTexture(Identifier.of(Peanutbutter.NAMESPACE, "block/tomato_crop" + i));
     }
 }

@@ -22,8 +22,7 @@ public class TallPlantBlockMixin {
 
             switch (random.nextInt(2)) {
                 case 0: return Item.SEEDS.id;
-                // TODO need to replace with tomato seeds which can be planted
-                case 1: return Peanutbutter.TOMATO.id;
+                case 1: return Peanutbutter.TOMATO_SEEDS.id;
             }
         }
 

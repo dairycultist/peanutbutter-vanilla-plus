@@ -28,6 +28,7 @@ import net.modificationstation.stationapi.api.template.block.TemplateBlock;
 import net.modificationstation.stationapi.api.template.item.TemplateFoodItem;
 import net.modificationstation.stationapi.api.template.item.TemplateItem;
 import net.modificationstation.stationapi.api.template.item.TemplateMushroomStewItem;
+import net.modificationstation.stationapi.api.template.item.TemplateSeedsItem;
 import net.modificationstation.stationapi.api.util.Namespace;
 import net.modificationstation.stationapi.api.util.Null;
 
@@ -47,6 +48,7 @@ public class Peanutbutter {
     public static Item GOLDEN_EGG;
     public static Item GOLDEN_FEATHER;
     public static Item TOMATO;
+    public static Item TOMATO_SEEDS;
     public static Item CURRY;
 
     public static Block TOMATO_CROP;
@@ -79,6 +81,9 @@ public class Peanutbutter {
         TOMATO = new TemplateFoodItem(NAMESPACE.id("tomato"), 2, false)
                 .setMaxCount(8)
                 .setTranslationKey(NAMESPACE, "tomato");
+
+        TOMATO_SEEDS = new TemplateSeedsItem(NAMESPACE.id("tomato_seeds"), TOMATO_CROP.id)
+                .setTranslationKey(NAMESPACE, "tomato_seeds");
 
         CURRY = new TemplateMushroomStewItem(NAMESPACE.id("curry"), 10)
                 .setTranslationKey(NAMESPACE, "curry");
