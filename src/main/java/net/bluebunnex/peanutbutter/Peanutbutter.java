@@ -1,8 +1,8 @@
 package net.bluebunnex.peanutbutter;
 
+import net.bluebunnex.peanutbutter.block.CustomCropBlock;
 import net.bluebunnex.peanutbutter.block.NetherCrownBlock;
 import net.bluebunnex.peanutbutter.block.PlantTemplateBlock;
-import net.bluebunnex.peanutbutter.block.TomatoCropBlock;
 import net.bluebunnex.peanutbutter.entity.CockatriceEntity;
 import net.bluebunnex.peanutbutter.entity.GoldenEggEntity;
 import net.bluebunnex.peanutbutter.entity.SwampMonsterEntity;
@@ -85,6 +85,8 @@ public class Peanutbutter {
         TOMATO_SEEDS = new TemplateSeedsItem(NAMESPACE.id("tomato_seeds"), TOMATO_CROP.id)
                 .setTranslationKey(NAMESPACE, "tomato_seeds");
 
+        ((CustomCropBlock) TOMATO_CROP).setProductAndSeed(TOMATO, TOMATO_SEEDS);
+
         CURRY = new TemplateMushroomStewItem(NAMESPACE.id("curry"), 10)
                 .setTranslationKey(NAMESPACE, "curry");
 
@@ -94,7 +96,7 @@ public class Peanutbutter {
     @EventListener
     public void registerBlocks(BlockRegistryEvent event) {
 
-        TOMATO_CROP = new TomatoCropBlock(NAMESPACE.id("tomato_crop"))
+        TOMATO_CROP = new CustomCropBlock(NAMESPACE.id("tomato_crop"))
                 .setTranslationKey(NAMESPACE, "tomato_crop");
 
         DAHLIA = new PlantTemplateBlock(NAMESPACE.id("dahlia"))
