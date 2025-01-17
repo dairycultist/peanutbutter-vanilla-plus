@@ -27,7 +27,7 @@ public class PickaxeItemMixin {
     static {
         // unsure how reliable this is but I'm gonna rely on it until told otherwise
 
-        Block[] temp = new Block[pickaxeEffectiveBlocks.length + 3];
+        Block[] temp = new Block[pickaxeEffectiveBlocks.length + 4];
 
         int i = 0;
         for (; i < pickaxeEffectiveBlocks.length; i++) {
@@ -35,6 +35,7 @@ public class PickaxeItemMixin {
         }
 
         temp[i++] = Peanutbutter.STONE_BRICKS;
+        temp[i++] = Peanutbutter.RUNIC_STONE;
         temp[i++] = Peanutbutter.COPPER_ORE;
         temp[i++] = Peanutbutter.HEMATITE_ORE;
 

@@ -1,7 +1,10 @@
 {
   "variants": {
     "": [
-      { "model": "peanutbutter:block/runic_stone1" }
+      { "model": "peanutbutter:block/runic_stone1" },
+      { "model": "peanutbutter:block/runic_stone2" },
+      { "model": "peanutbutter:block/runic_stone3" },
+      { "model": "peanutbutter:block/runic_stone4" }
     ]
   }
 }

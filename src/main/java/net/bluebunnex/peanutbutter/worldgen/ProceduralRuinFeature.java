@@ -34,29 +34,32 @@ public class ProceduralRuinFeature extends ConditionalFeature {
 
             for (int dy = -8; dy < 3; dy++) {
 
-                int blockID = random.nextInt(10) > 3 ? Peanutbutter.STONE_BRICKS.id
-                            : random.nextInt(2) == 0 ? Block.COBBLESTONE.id : Block.STONE.id;
-
                 if (dy == -1) {
 
-                    world.setBlock(x + dx, y + dy, z + dz, blockID);
-                    world.setBlock(x - dx, y + dy, z - dz, blockID);
-
-                } else if (dy > -1) {
-
-                    if (world.getMaterial(x + dx, y + dy - 1, z + dz).isSolid() && random.nextInt(10) > 2 + dy)
-                        world.setBlock(x + dx, y + dy, z + dz, blockID);
-
-                    if (world.getMaterial(x - dx, y + dy - 1, z - dz).isSolid() && random.nextInt(10) > 2 + dy)
-                        world.setBlock(x - dx, y + dy, z - dz, blockID);
+                    world.setBlock(x + dx, y + dy, z + dz, Peanutbutter.RUNIC_STONE.id);
+                    world.setBlock(x - dx, y + dy, z - dz, Peanutbutter.RUNIC_STONE.id);
 
                 } else {
 
-                    if (!world.getMaterial(x + dx, y + dy, z + dz).isSolid())
-                        world.setBlock(x + dx, y + dy, z + dz, blockID);
+                    int blockID = random.nextInt(10) > 3 ? Peanutbutter.STONE_BRICKS.id
+                                : random.nextInt(2) == 0 ? Block.COBBLESTONE.id : Block.STONE.id;
 
-                    if (!world.getMaterial(x - dx, y + dy, z - dz).isSolid())
-                        world.setBlock(x - dx, y + dy, z - dz, blockID);
+                    if (dy > -1) {
+
+                        if (world.getMaterial(x + dx, y + dy - 1, z + dz).isSolid() && random.nextInt(10) > 2 + dy)
+                            world.setBlock(x + dx, y + dy, z + dz, blockID);
+
+                        if (world.getMaterial(x - dx, y + dy - 1, z - dz).isSolid() && random.nextInt(10) > 2 + dy)
+                            world.setBlock(x - dx, y + dy, z - dz, blockID);
+
+                    } else {
+
+                        if (!world.getMaterial(x + dx, y + dy, z + dz).isSolid())
+                            world.setBlock(x + dx, y + dy, z + dz, blockID);
+
+                        if (!world.getMaterial(x - dx, y + dy, z - dz).isSolid())
+                            world.setBlock(x - dx, y + dy, z - dz, blockID);
+                    }
                 }
             }
         }

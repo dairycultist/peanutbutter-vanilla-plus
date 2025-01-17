@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "side": "peanutbutter:block/runic_stone4",
+    "end": "minecraft:block/stone"
+  }
+}
