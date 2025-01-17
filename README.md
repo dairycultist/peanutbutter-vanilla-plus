@@ -23,7 +23,7 @@ Get it, 'cuz it's a vanilla+ mod and it's called peanutbutter, which you add to 
   - Copper block
 - New crops/food
   - Tomato + tomato seeds + tomato crop
-  - Curry (TODO craft with 1 cooked pork, 1 tomato, 1 bowl)
+  - Curry (TODO craft with 1 sugar, 1 mushroom, 1 tomato, 1 bowl)
 - New structures
   - Overworld
     - Pyramids (plains and desert)
