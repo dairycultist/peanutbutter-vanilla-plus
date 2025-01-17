@@ -2,13 +2,17 @@
 
 Get it, 'cuz it's a vanilla+ mod and it's called peanutbutter, which you add to vanilla icecream? I thought it was witty.
 
+## Core Beliefs
+- good food should be made from bad food/non-food
+- wood and stone tools shouldn't be abandoned in ten seconds because iron is so easy to get
+  - I didn't like how in the first 5 minutes of the game, you could immediately jump right from wood to stone to iron
+    tools without even going underground.
+
 ## Implemented
 - Copper
   - Replaces stone
   - Iron spawns lower (no longer at the surface)
   - Slows down early game progression
-    - I didn't like how in the first 5 minutes of the game, you could immediately jump right from wood to stone to iron
-      tools without even going underground.
 - Hematite
   - red ingot
   - found in the nether

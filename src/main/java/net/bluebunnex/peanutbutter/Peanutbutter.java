@@ -42,6 +42,16 @@ public class Peanutbutter {
     @Entrypoint.Namespace
     public static final Namespace NAMESPACE = Null.get();
 
+    public static Block TOMATO_CROP;
+    public static Block DAHLIA;
+    public static Block NETHER_CROWN;
+    public static Block STONE_BRICKS;
+    public static Block RUNIC_STONE;
+    public static Block CARVED_BONE;
+    public static Block COPPER_ORE;
+    public static Block COPPER_BLOCK;
+    public static Block HEMATITE_ORE;
+
     public static Item COPPER_INGOT;
     public static Item HEMATITE_INGOT;
     public static Item SLIME_HAMMER;
@@ -50,15 +60,6 @@ public class Peanutbutter {
     public static Item TOMATO;
     public static Item TOMATO_SEEDS;
     public static Item CURRY;
-
-    public static Block TOMATO_CROP;
-    public static Block DAHLIA;
-    public static Block NETHER_CROWN;
-    public static Block STONE_BRICKS;
-    public static Block CARVED_BONE;
-    public static Block COPPER_ORE;
-    public static Block COPPER_BLOCK;
-    public static Block HEMATITE_ORE;
 
     // note that blocks are registered before items
 
@@ -81,6 +82,12 @@ public class Peanutbutter {
                 .setResistance(10.0f)
                 .setSoundGroup(STONE_SOUND_GROUP)
                 .setTranslationKey(NAMESPACE, "stone_bricks");
+
+        RUNIC_STONE = new TemplateBlock(NAMESPACE.id("runic_stone"), Material.STONE)
+                .setHardness(1.5f)
+                .setResistance(10.0f)
+                .setSoundGroup(STONE_SOUND_GROUP)
+                .setTranslationKey(NAMESPACE, "runic_stone");
 
         CARVED_BONE = new TemplateBlock(NAMESPACE.id("carved_bone"), Material.STONE)
                 .setHardness(1.5f) // copied from stone

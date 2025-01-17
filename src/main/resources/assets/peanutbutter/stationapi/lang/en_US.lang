@@ -18,6 +18,7 @@ item.@.golden_feather.name=Golden Feather
 tile.@.dahlia.name=Dahlia
 tile.@.nether_crown.name=Nether Crown
 tile.@.stone_bricks.name=Stone Bricks
+tile.@.runic_stone.name=Runic Stone
 tile.@.carved_bone.name=Carved Bone
 tile.@.copper_ore.name=Copper Ore
 tile.@.copper_block.name=Copper Block
