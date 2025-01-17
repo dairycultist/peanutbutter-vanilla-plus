@@ -57,6 +57,7 @@ public class Peanutbutter {
     public static Item SLIME_HAMMER;
     public static Item GOLDEN_EGG;
     public static Item GOLDEN_FEATHER;
+    public static Item MUFFIN;
     public static Item TOMATO;
     public static Item TOMATO_SEEDS;
     public static Item CURRY;
@@ -134,6 +135,9 @@ public class Peanutbutter {
 
         GOLDEN_FEATHER = new TemplateItem(NAMESPACE.id("golden_feather"))
                 .setTranslationKey(NAMESPACE, "golden_feather");
+
+        MUFFIN = new TemplateFoodItem(NAMESPACE.id("muffin"), 9, false)
+                .setTranslationKey(NAMESPACE, "muffin");
 
         TOMATO = new TemplateFoodItem(NAMESPACE.id("tomato"), 2, false)
                 .setMaxCount(8)

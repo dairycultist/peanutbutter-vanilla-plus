@@ -22,8 +22,11 @@ Get it, 'cuz it's a vanilla+ mod and it's called peanutbutter, which you add to 
   - Carved bone
   - Copper block
 - New crops/food
-  - Tomato + tomato seeds + tomato crop
-  - Curry (TODO craft with 1 sugar, 1 mushroom, 1 tomato, 1 bowl)
+  - Tomato (stacks to 8, heals 1 heart)
+    - Tomato seeds
+    - Tomato crop
+  - Curry (TODO shapeless craft with 1 sugar, 1 mushroom, 1 tomato, 1 bowl)
+  - Muffin (8 wheat surrounding 1 sugar)
 - New structures
   - Overworld
     - Pyramids (plains and desert)
@@ -40,6 +43,11 @@ Get it, 'cuz it's a vanilla+ mod and it's called peanutbutter, which you add to 
   - hematite top right, two sticks diagonal, and two golden feathers by the hematite
 - Hematite hammer
   - hi dmg + knockback
+- Wings
+  - made with golden feathers
+  - end game gear
+  - gives you a double jump
+  - not as busted as the elytra but just convenient for exploring/building
 - new music disc(s)
 - maracas
 - baubles
