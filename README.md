@@ -35,6 +35,11 @@ Get it, 'cuz it's a vanilla+ mod and it's called peanutbutter, which you add to 
   - Swamp Monster
 
 ### Planned? (Literally all my ideas good or bad)
+- Hematite lance
+  - hi dmg + reach
+  - hematite top right, two sticks diagonal, and two golden feathers by the hematite
+- Hematite hammer
+  - hi dmg + knockback
 - new music disc(s)
 - maracas
 - baubles
