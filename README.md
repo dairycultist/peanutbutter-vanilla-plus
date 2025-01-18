@@ -36,6 +36,10 @@ Get it, 'cuz it's a vanilla+ mod and it's called peanutbutter, which you add to 
 - New mobs
   - Cockatrice
   - Swamp Monster
+- Ectogel
+  - Dropped by ghasts (12-32)
+  - You run faster on it
+- Mobs now guaranteed to drop at least 1 of their item
 
 ### Planned? (Literally all my ideas good or bad)
 - Hematite lance

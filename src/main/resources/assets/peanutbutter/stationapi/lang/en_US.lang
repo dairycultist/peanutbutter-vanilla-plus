@@ -8,7 +8,6 @@ item.@.muffin.name=Muffin
 item.@.curry.name=Curry
 item.@.tomato.name=Tomato
 item.@.tomato_seeds.name=Tomato Seeds
-tile.@.tomato_crop.name=Tomato Crop
 
 item.@.copper_ingot.name=Copper Ingot
 item.@.hematite_ingot.name=Hematite Ingot
@@ -16,6 +15,8 @@ item.@.slime_hammer.name=Slime Hammer
 item.@.golden_egg.name=Golden Egg
 item.@.golden_feather.name=Golden Feather
 
+tile.@.ectogel.name=Ectogel
+tile.@.tomato_crop.name=Tomato Crop
 tile.@.dahlia.name=Dahlia
 tile.@.nether_crown.name=Nether Crown
 tile.@.stone_bricks.name=Stone Bricks

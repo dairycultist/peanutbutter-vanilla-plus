@@ -1,6 +1,7 @@
 package net.bluebunnex.peanutbutter;
 
 import net.bluebunnex.peanutbutter.block.CustomCropBlock;
+import net.bluebunnex.peanutbutter.block.EctogelBlock;
 import net.bluebunnex.peanutbutter.block.NetherCrownBlock;
 import net.bluebunnex.peanutbutter.block.PlantTemplateBlock;
 import net.bluebunnex.peanutbutter.entity.CockatriceEntity;
@@ -42,6 +43,7 @@ public class Peanutbutter {
     @Entrypoint.Namespace
     public static final Namespace NAMESPACE = Null.get();
 
+    public static Block ECTOGEL;
     public static Block TOMATO_CROP;
     public static Block DAHLIA;
     public static Block NETHER_CROWN;
@@ -66,6 +68,10 @@ public class Peanutbutter {
 
     @EventListener
     public void registerBlocks(BlockRegistryEvent event) {
+
+        ECTOGEL = new EctogelBlock(NAMESPACE.id("ectogel"))
+                .setHardness(0.2f)
+                .setTranslationKey(NAMESPACE, "ectogel");
 
         TOMATO_CROP = new CustomCropBlock(NAMESPACE.id("tomato_crop"))
                 .setTranslationKey(NAMESPACE, "tomato_crop");
