@@ -12,15 +12,10 @@ import net.bluebunnex.peanutbutter.item.SlimeHammer;
 import net.mine_diver.unsafeevents.listener.EventListener;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.render.entity.ChickenEntityRenderer;
-import net.minecraft.client.render.entity.LivingEntityRenderer;
-import net.minecraft.client.render.entity.model.BipedEntityModel;
-import net.minecraft.client.render.entity.model.ChickenEntityModel;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.world.biome.Biome;
-import net.modificationstation.stationapi.api.client.event.render.entity.EntityRendererRegisterEvent;
 import net.modificationstation.stationapi.api.event.entity.EntityRegister;
 import net.modificationstation.stationapi.api.event.registry.BlockRegistryEvent;
 import net.modificationstation.stationapi.api.event.registry.ItemRegistryEvent;
@@ -116,7 +111,7 @@ public class Peanutbutter {
                 .setSoundGroup(METAL_SOUND_GROUP)
                 .setTranslationKey(NAMESPACE, "copper_block");
 
-        HEMATITE_ORE = new TemplateBlock(NAMESPACE.id("hematite_ore"), Material.STONE)
+        HEMATITE_ORE = new TemplateBlock(NAMESPACE.id("hematite_ore"), Material.STONE) // TODO make this ore only drop with diamond tool
                 .setHardness(10.0f) // copied from obsidian
                 .setResistance(2000.0f)
                 .setSoundGroup(STONE_SOUND_GROUP)
