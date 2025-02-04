@@ -169,15 +169,6 @@ public class Peanutbutter {
         event.register(SwampMonsterEntity.class, "SwampMonster");
     }
 
-    @EventListener
-    public void registerEntityRenderer(EntityRendererRegisterEvent event) {
-
-        event.renderers.put(CockatriceEntity.class, new ChickenEntityRenderer(new ChickenEntityModel(), 0.3f));
-        event.renderers.put(GoldenEggEntity.class, PeanutbutterClient.GOLDEN_EGG_RENDERER);
-
-        event.renderers.put(SwampMonsterEntity.class, new LivingEntityRenderer(new BipedEntityModel(), 0.5f));
-    }
-
 
 
     public static ItemStack getRandomChestItem(Random random, Biome biome) {

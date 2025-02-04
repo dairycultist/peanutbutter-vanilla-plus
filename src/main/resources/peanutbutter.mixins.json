@@ -11,10 +11,8 @@
     "NetherChunkGeneratorMixin",
     "OreFeatureMixin",
     "OverworldChunkGeneratorMixin",
-    "PickaxeItemMixin",
     "SwamplandBiomeMixin",
     "TallPlantBlockMixin",
-    "ToolItemAccessor",
     "ToolRecipesMixin",
     "WeaponRecipesMixin"
   ],
