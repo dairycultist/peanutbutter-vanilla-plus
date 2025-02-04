@@ -2,10 +2,6 @@
 
 Get it, 'cuz it's a vanilla+ mod and it's called peanutbutter, which you add to vanilla icecream? I thought it was witty.
 
-achievement reference
-(change up the achievements section to guide the player through new content)
-https://github.com/telvarost/WhatAreYouScoring-StationAPI/blob/main/src%2Fmain%2Fjava%2Fcom%2Fgithub%2Ftelvarost%2Fwhatareyouscoring%2Fevents%2Finit%2FAchievementListener.java
-
 ## Core Beliefs
 - good food should be made from bad food/non-food
 - wood and stone tools shouldn't be abandoned in ten seconds because iron is so easy to get
@@ -15,14 +11,47 @@ https://github.com/telvarost/WhatAreYouScoring-StationAPI/blob/main/src%2Fmain%2
 - The game should be coherent
 
 ## Implemented
-- Copper
-  - Replaces stone
-  - Iron spawns lower (no longer at the surface)
-  - Slows down early game progression
-- Hematite
-  - Red ingot
-  - Found in the nether
-  - Sidegrade (not upgrade) from diamond, better for combat since nether is combat-focused
+
+> [!IMPORTANT]  
+> Implemented features may be WIP and subject to change.
+
+### New, useful ores
+
+**Copper**
+- Replaces stone
+- Slows down early game progression and makes each tool stage more rewarding
+(you need to actually find a cave to get copper, then go deeper in the cave for iron)
+
+**Hematite**
+- Red ingot
+- Found in the nether
+- Sidegrade (not upgrade) from diamond, better for combat since nether is combat-focused
+
+### New structures
+
+**Overworld**
+- Pyramids (plains and desert)
+- Ruins (procedural, every one is different!)
+
+**Nether**
+- Pyramid
+
+### New mobs
+
+- Cockatrice
+  - Spawn in the nether
+  - Drop golden feathers
+  - Lay golden eggs
+- Swamp Monster
+  - Challenging monster
+
+### Tweaks
+
+- Iron spawns lower (no longer at the surface)
+- Mobs now guaranteed to drop at least 1 of their item
+
+### Other
+
 - New decoration blocks
   - Stone bricks
   - Carved bone
@@ -33,19 +62,9 @@ https://github.com/telvarost/WhatAreYouScoring-StationAPI/blob/main/src%2Fmain%2
     - Tomato crop
   - Curry (TODO shapeless craft with 1 sugar, 1 mushroom, 1 tomato, 1 bowl)
   - Muffin (8 wheat surrounding 1 sugar)
-- New structures
-  - Overworld
-    - Pyramids (plains and desert)
-    - Ruins (procedural!)
-  - Nether
-    - Pyramid
-- New mobs
-  - Cockatrice
-  - Swamp Monster
 - Ectogel
   - Dropped by ghasts (12-32)
   - You run faster on it
-- Mobs now guaranteed to drop at least 1 of their item
 
 ### Planned? (Literally all my ideas good or bad)
 - Quicksilver
@@ -84,6 +103,8 @@ https://github.com/telvarost/WhatAreYouScoring-StationAPI/blob/main/src%2Fmain%2
 - add new achievements
   - "Doom the nether" / defeat the nether queen
   - "This is my jam" / collect all the music discs
+  - other achievements that guide the player through new content
+  - [code reference](https://github.com/telvarost/WhatAreYouScoring-StationAPI/blob/main/src%2Fmain%2Fjava%2Fcom%2Fgithub%2Ftelvarost%2Fwhatareyouscoring%2Fevents%2Finit%2FAchievementListener.java)
 
 <img height="100" src="https://static.wikia.nocookie.net/stardew-valley-minecraft-datapack/images/9/96/Music_disc_concernedapewinternocturneofice.png">
 <img height="100" src="https://static.wikia.nocookie.net/shivaxis-rlcraft/images/c/cc/Iron_Hammer_%28Better_Survival%29.png">
