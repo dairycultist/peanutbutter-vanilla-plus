@@ -20,9 +20,9 @@ https://github.com/telvarost/WhatAreYouScoring-StationAPI/blob/main/src%2Fmain%2
   - Iron spawns lower (no longer at the surface)
   - Slows down early game progression
 - Hematite
-  - red ingot
-  - found in the nether
-  - sidegrade (not upgrade) from diamond, better for combat since nether is combat-focused
+  - Red ingot
+  - Found in the nether
+  - Sidegrade (not upgrade) from diamond, better for combat since nether is combat-focused
 - New decoration blocks
   - Stone bricks
   - Carved bone
@@ -50,7 +50,8 @@ https://github.com/telvarost/WhatAreYouScoring-StationAPI/blob/main/src%2Fmain%2
 ### Planned? (Literally all my ideas good or bad)
 - Quicksilver
   - The ore has streaks in it like nether quartz
-  - Fastest tool, but has mid-range durability and mining level of wood
+  - Found in the nether
+  - Sidegrade (not upgrade) from diamond, mines the fastest but has mid-range durability and the mining level of wood
 - Hematite lance
   - hi dmg + reach
   - hematite top right, two sticks diagonal, and two golden feathers by the hematite
