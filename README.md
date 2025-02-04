@@ -106,6 +106,8 @@ Get it, 'cuz it's a vanilla+ mod and it's called peanutbutter, which you add to 
   - other achievements that guide the player through new content
   - [code reference](https://github.com/telvarost/WhatAreYouScoring-StationAPI/blob/main/src%2Fmain%2Fjava%2Fcom%2Fgithub%2Ftelvarost%2Fwhatareyouscoring%2Fevents%2Finit%2FAchievementListener.java)
 
+maybe update project dependencies ([reference](https://github.com/telvarost/AmbientOverride-StationAPI/commit/8e2b9abc1d68de11ebf130302313078292ce8a1d)) 
+
 <img height="100" src="https://static.wikia.nocookie.net/stardew-valley-minecraft-datapack/images/9/96/Music_disc_concernedapewinternocturneofice.png">
 <img height="100" src="https://static.wikia.nocookie.net/shivaxis-rlcraft/images/c/cc/Iron_Hammer_%28Better_Survival%29.png">
 
