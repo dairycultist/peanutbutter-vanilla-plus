@@ -2,12 +2,9 @@
 
 Minecraft vanilla+ mod that leans into the light medieval fantasy elements of Minecraft, fleshing out existing mechanics without feeling bloated.
 
-## Core Principles
-- good food should be made from bad food/non-food
 - The added content should be coherent
 - lonely (no other humans, they're all zombies at best)
-
-new structures, new mobs (types of zombie, aggressive wildlife like wasps, piranhas, sharks), new blocks, not really new items tho
+- new structures, new mobs (types of zombie, aggressive wildlife like wasps, piranhas, sharks), new blocks, not really new items tho
 
 ## Implemented
 
@@ -37,14 +34,8 @@ new structures, new mobs (types of zombie, aggressive wildlife like wasps, piran
   - Stone bricks
   - Carved bone
   - Copper block
-- New crops/food
-  - Tomato (stacks to 8, heals 1 heart)
-    - Tomato seeds
-    - Tomato crop
-  - Curry (TODO shapeless craft with 1 sugar, 1 mushroom, 1 tomato, 1 bowl)
-  - Muffin (8 wheat surrounding 1 sugar)
 - Ectogel
-  - Dropped by ghasts (12-32)
+  - Dropped by ghasts (12-32) (I don't like this particularly but idk what to replace it with)
   - You run faster on it
 
 ## Planned?
@@ -77,3 +68,4 @@ https://www.soundsnap.com/wind_chimes_24_wav (audacity -> echo -> reverb -> fade
 
 ## Suggested Companion Mods
 - [Copper and Caverns](https://modrinth.com/mod/copper-and-caverns)
+- A food mod if I ever get around to making/finding one - good food should be made from bad food/non-food (new crops like tomato that stacks to 8 and heals 1 heart) (Curry, shapeless craft with 1 sugar, 1 mushroom, 1 tomato, 1 bowl) (Muffin 8 wheat surrounding 1 sugar)
