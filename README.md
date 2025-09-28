@@ -1,6 +1,6 @@
 # Peanutbutter (Vanilla+) [StationAPI]
 
-Minecraft vanilla+ mod that leans into the light medieval fantasy elements of Minecraft, adding content that fleshing out existing mechanics without feeling bloated or incoherent.
+Minecraft vanilla+ mod that leans into the light medieval fantasy elements of Minecraft, adding content that fleshes out existing mechanics without feeling bloated or incoherent.
 
 ## Implemented
 
@@ -22,20 +22,18 @@ Minecraft vanilla+ mod that leans into the light medieval fantasy elements of Mi
   - Spawns during the day in the desert
   - Zombie equivalent
 
-### Tweaks
+### Blocks
 
-- Iron spawns lower (no longer at the surface)
-- Mobs now guaranteed to drop at least 1 of their item
-
-### Other
-
-- New decoration blocks
+- Decoration blocks
   - Stone bricks
   - Carved bone
-  - Copper block
 - Ectogel
   - Dropped by ghasts (12-32) (I don't like this particularly but idk what to replace it with)
   - You run faster on it
+ 
+### Tweaks
+
+- Mobs now guaranteed to drop at least 1 of their item
 
 ## Planned?
 
@@ -68,3 +66,4 @@ https://www.soundsnap.com/wind_chimes_24_wav (audacity -> echo -> reverb -> fade
 ## Suggested Companion Mods
 - [Copper and Caverns](https://modrinth.com/mod/copper-and-caverns)
 - A food mod if I ever get around to making/finding one - good food should be made from bad food/non-food (new crops like tomato that stacks to 8 and heals 1 heart) (Curry, shapeless craft with 1 sugar, 1 mushroom, 1 tomato, 1 bowl) (Muffin 8 wheat surrounding 1 sugar)
+- Mob texture variations (chicken!)
