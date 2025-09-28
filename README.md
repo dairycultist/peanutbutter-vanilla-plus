@@ -1,10 +1,6 @@
 # Peanutbutter (Vanilla+) [StationAPI]
 
-Minecraft vanilla+ mod that leans into the light medieval fantasy elements of Minecraft, fleshing out existing mechanics without feeling bloated.
-
-- The added content should be coherent
-- lonely (no other humans, they're all zombies at best)
-- new structures, new mobs (types of zombie, aggressive wildlife like wasps, piranhas, sharks), new blocks, not really new items tho
+Minecraft vanilla+ mod that leans into the light medieval fantasy elements of Minecraft, adding content that fleshing out existing mechanics without feeling bloated or incoherent.
 
 ## Implemented
 
@@ -12,6 +8,9 @@ Minecraft vanilla+ mod that leans into the light medieval fantasy elements of Mi
 
 > [!IMPORTANT]  
 > Implemented features may be WIP and subject to change.
+
+- lonely (no other humans, they're all zombies at best)
+- new structures, new mobs (types of zombie, aggressive wildlife like wasps, piranhas, sharks), new blocks, not really new items tho
 
 ### New mobs
 
