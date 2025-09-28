@@ -54,7 +54,10 @@ Minecraft+
   - Dropped by ghasts (12-32)
   - You run faster on it
 
-### Planned? (Literally all my ideas good or bad)
+## Planned?
+
+Literally all my ideas good or bad
+
 - Wings
   - made with golden feathers
   - end game gear
