@@ -1,5 +1,7 @@
 # Peanutbutter (Vanilla+) [StationAPI]
 
+Minecraft vanilla+ mod that leans into the loneliness + light medieval fantasy elements of Minecraft, fleshing out existing mechanics without feeling bloated.
+
 ## Core Principles
 - good food should be made from bad food/non-food
 - wood and stone tools shouldn't be abandoned in ten seconds because iron is so easy to get
@@ -7,14 +9,13 @@
     tools without even going underground.
 - Stripmining is just not fun
 - The game should be coherent
-
-minecraft mod that leans into the light medieval fantasy elements of Minecraft + loneliness (no other humans, they're all zombies at best), fleshing out existing mechanics without feeling bloated
+- lonely (no other humans, they're all zombies at best)
 
 new structures, new mobs (types of zombie, aggressive wildlife like wasps, piranhas, sharks), new blocks, not really new items tho
 
-Minecraft+
-
 ## Implemented
+
+*Some of the stuff here isn't actually implemented, and also not everything that's implemented is here (because it's planned to be removed), but I'll fix that when I fix that*
 
 > [!IMPORTANT]  
 > Implemented features may be WIP and subject to change.
