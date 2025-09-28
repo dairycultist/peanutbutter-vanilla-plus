@@ -1,14 +1,10 @@
 # Peanutbutter (Vanilla+) [StationAPI]
 
-Minecraft vanilla+ mod that leans into the loneliness + light medieval fantasy elements of Minecraft, fleshing out existing mechanics without feeling bloated.
+Minecraft vanilla+ mod that leans into the light medieval fantasy elements of Minecraft, fleshing out existing mechanics without feeling bloated.
 
 ## Core Principles
 - good food should be made from bad food/non-food
-- wood and stone tools shouldn't be abandoned in ten seconds because iron is so easy to get
-  - I didn't like how in the first 5 minutes of the game, you could immediately jump right from wood to stone to iron
-    tools without even going underground.
-- Stripmining is just not fun
-- The game should be coherent
+- The added content should be coherent
 - lonely (no other humans, they're all zombies at best)
 
 new structures, new mobs (types of zombie, aggressive wildlife like wasps, piranhas, sharks), new blocks, not really new items tho
@@ -19,11 +15,6 @@ new structures, new mobs (types of zombie, aggressive wildlife like wasps, piran
 
 > [!IMPORTANT]  
 > Implemented features may be WIP and subject to change.
-
-### Copper
-- Replaces stone
-- Slows down early game progression and makes each tool stage more rewarding
-(you need to actually find a cave to get copper, then go deeper in the cave for iron)
 
 ### New mobs
 
