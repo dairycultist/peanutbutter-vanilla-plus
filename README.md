@@ -74,3 +74,6 @@ maybe update project dependencies ([reference](https://github.com/telvarost/Ambi
 ### Sound sources
 https://www.videvo.net/sound-effect/dove-pigeon-coo-pe912203/242526/#rs=audio-download
 https://www.soundsnap.com/wind_chimes_24_wav (audacity -> echo -> reverb -> fade out)
+
+## Suggested Companion Mods
+- [Copper and Caverns](https://modrinth.com/mod/copper-and-caverns)
