@@ -30,8 +30,9 @@ Minecraft+
   - Spawn in the nether
   - Drop golden feathers
   - Lay golden eggs
-- Swamp Monster
-  - Challenging monster
+- Mummy
+  - Spawns during the day in the desert
+  - Zombie equivalent
 
 ### Tweaks
 
